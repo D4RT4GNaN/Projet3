@@ -1,5 +1,10 @@
 package main.java;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class MoreOrLess {
@@ -8,11 +13,22 @@ public class MoreOrLess {
      * @return the secret number
      */
     public int randomSecretCombination () {
-        int [] digitSecretCombination = new int [4];
+        Properties properties = new Properties();
+        try {
+            FileInputStream config = new FileInputStream("src/main/resources/config.properties");
+            properties.load(config);
+            config.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int caseNumber = Integer.parseInt(properties.getProperty("number-case"));
+        int [] digitSecretCombination = new int [caseNumber];
         int secretCombination = 0;
         String stringSecretCombination = "";
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < caseNumber; i++) {
             if (i == 0)
                 digitSecretCombination[i] = 1 + (int)(Math.random() * 9);
             else
