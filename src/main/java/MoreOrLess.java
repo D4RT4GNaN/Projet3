@@ -10,6 +10,14 @@ public class MoreOrLess {
 
     Properties properties = new Properties();
 
+    public MoreOrLess (boolean developMode) {
+        runMoreOrLess(developMode);
+    }
+
+    public MoreOrLess () {
+        runMoreOrLess(false);
+    }
+
     /**
      * Create a random number
      * @return the secret number
@@ -20,9 +28,9 @@ public class MoreOrLess {
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Le fichier n'existe pas !");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Impossible de lire ou d'écrire dans le fichier.");
         }
         int caseNumber = Integer.parseInt(properties.getProperty("number-case-MoreOrLess"));
         int [] digitSecretCombination = new int [caseNumber];
@@ -59,9 +67,10 @@ public class MoreOrLess {
      */
     public boolean compareNumber (int userNumber, int secretNumber, int lapCounter, int triesMax) {
         boolean endGame = false;
-        if (lapCounter == triesMax)
+        if (lapCounter == triesMax) {
             System.out.println("Perdu!! le nombre secret était " + secretNumber);
-        else if (userNumber == secretNumber) {
+            endGame = true;
+        } else if (userNumber == secretNumber) {
             System.out.println("Bravo! Vous avez trouvez le nombre secret en seulement " + lapCounter + " tours");
             endGame = true;
         } else if (userNumber < secretNumber)
@@ -74,19 +83,19 @@ public class MoreOrLess {
     /**
      *Run asking process for one secret number
      */
-    public void runMoreOrLess () {
+    public void runMoreOrLess (boolean developMode) {
         int secretNumber = randomSecretCombination();
         int lapCounter = 0;
         int triesMax = Integer.parseInt(properties.getProperty("number-tries-MoreOrLess"));
         System.out.println("Bienvenue sur le jeu du plus ou moins");
-        System.out.println("A vous de jouez :");
+        if (developMode)
+            System.out.println("nombre secret : " + secretNumber);
+        System.out.println("A vous de jouez (" + Integer.parseInt(properties.getProperty("number-case-MoreOrLess")) + ") :");
         boolean endGame;
         do {
             lapCounter++;
             int userNumber = askNumber();
             endGame = compareNumber(userNumber, secretNumber, lapCounter, triesMax);
-            if (lapCounter == triesMax)
-                endGame = true;
         } while (!endGame);
     }
 }
