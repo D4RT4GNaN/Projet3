@@ -165,11 +165,32 @@ public class utils {
         return maxTries;
     }
 
+    /**
+     * Check if the string in parameter contain an int
+     * @param string The text proposed by the player
+     * @return True if it's a number, False if it's something else
+     */
     public static boolean isNumber (String string) {
         try {
             Integer.parseInt(string);
             return true;
         } catch (NumberFormatException e) {
+            System.out.println("Caractère(s) non accepté(s) : Veuillez entrer un nombre !");
+            return false;
+        }
+    }
+
+    /**
+     * Check if the string in parameter have the same length with the secret code
+     * @param string The text proposed by the player
+     * @return True if it have the same length
+     */
+    public static boolean hasSameLength (String string, String game) {
+        int secretCodeLength = getSecretCodeLength(game);
+        if (string.length() == secretCodeLength)
+            return true;
+        else {
+            System.out.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
             return false;
         }
     }
