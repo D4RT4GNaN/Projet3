@@ -12,7 +12,7 @@ public class Computer {
     }
 
     /**
-     * Initialization method
+     * Initialization method for the limit of each digit
      * @param gameName The name of the game
      */
     public void init (String gameName) {
@@ -44,7 +44,7 @@ public class Computer {
     }
 
     /**
-     *
+     *Create a number based on the player's proposal and the limit of each digit
      * @param playerProposal The number entered by the player
      * @param playerPattern The pattern returned by the program and based on the player's proposal
      * @return The number proposed by the computer
@@ -53,7 +53,7 @@ public class Computer {
         updateLimit(playerProposal, playerPattern);
         String[] splitedPlayerPattern = playerPattern.split("");
 
-        for (int i = 0; i < splitedPlayerPattern.length; i++) {
+        for (int i = 0; i < utils.getSecretCodeLength("SearchMoreOrLess"); i++) {
             if (splitedPlayerPattern[i].equals("="))
                 computerProposal[i] = playerProposal[i];
             else

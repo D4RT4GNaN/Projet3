@@ -12,9 +12,15 @@ public class SearchMoreOrLess {
     private int secretCodeLength;
     private String pattern;
 
+    /**
+     * Initialization method the secret number and the pattern
+     */
     private void init () {
         secretCodeLength = utils.getSecretCodeLength(gameName);
         secretCombination = utils.randomCombination(secretCodeLength);
+        for (int i = 0; i < secretCodeLength; i++) {
+            pattern += "*";
+        }
     }
 
     /**
@@ -22,7 +28,7 @@ public class SearchMoreOrLess {
      * @param mode The chosen game mode
      */
     public SearchMoreOrLess (int mode, boolean devMode) {
-        boolean endGame = false;
+        boolean endGame;
         int numberTries = 0;
         int numberTriesMax = utils.getMaxTries(gameName);
         this.init();
@@ -58,6 +64,20 @@ public class SearchMoreOrLess {
                     computer.updateLimit(computerProposal, pattern);
                 }
                 break;
+            case 3://défenseur
+                int computerLoop = 0;
+                computer = new Computer(gameName);
+                secretCombination = askPlayer();
+                int[] computerProposal = null;
+
+                while (true) {
+                    computerLoop++;
+                    computerProposal = computer.computerProcessing(computerProposal,pattern);
+                    if (compareResponse(computerProposal)) {
+                        System.out.println("Yahah !!! J'ai gagné en : " + computerLoop + " coup(s) et le nombre secret était bien : " + utils.combinationToInt(secretCombination));
+                        break;
+                    }
+                }
         }
     }
 
@@ -76,10 +96,6 @@ public class SearchMoreOrLess {
         playerProposal = utils.intToCombination(Integer.parseInt(scanner));
 
         return playerProposal;
-    }
-
-    private void askComputer () {
-
     }
 
     /**
