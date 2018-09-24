@@ -131,9 +131,9 @@ public class utils {
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Le fichier n'existe pas !");
+            System.err.println("Le fichier n'existe pas !");
         } catch (IOException e) {
-            System.out.println("Impossible de lire ou d'écrire dans le fichier.");
+            System.err.println("Impossible de lire ou d'écrire dans le fichier.");
         }
 
         secretCodeLength = Integer.parseInt(properties.getProperty("number-case-" + game));
@@ -155,9 +155,9 @@ public class utils {
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Le fichier n'existe pas !");
+            System.err.println("Le fichier n'existe pas !");
         } catch (IOException e) {
-            System.out.println("Impossible de lire ou d'écrire dans le fichier.");
+            System.err.println("Impossible de lire ou d'écrire dans le fichier.");
         }
 
         maxTries = Integer.parseInt(properties.getProperty("number-tries-" + game));
@@ -175,7 +175,7 @@ public class utils {
             Integer.parseInt(string);
             return true;
         } catch (NumberFormatException e) {
-            System.out.println("Caractère(s) non accepté(s) : Veuillez entrer un nombre !");
+            System.err.println("Caractère(s) non accepté(s) : Veuillez entrer un nombre !");
             return false;
         }
     }
@@ -190,7 +190,7 @@ public class utils {
         if (string.length() == secretCodeLength)
             return true;
         else {
-            System.out.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
+            System.err.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
             return false;
         }
     }
