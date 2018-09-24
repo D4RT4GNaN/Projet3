@@ -1,4 +1,6 @@
-package main.java;
+package main.java.SearchMoreOrLess;
+
+import main.java.utils;
 
 import java.util.Scanner;
 
@@ -8,6 +10,7 @@ public class SearchMoreOrLess {
     private Scanner sc = new Scanner(System.in);
     private String gameName = "SearchMoreOrLess";
     private int secretCodeLength;
+    private String pattern;
 
     private void init () {
         secretCodeLength = utils.getSecretCodeLength(gameName);
@@ -40,6 +43,20 @@ public class SearchMoreOrLess {
                     System.out.println("Bravo !!! Le nombre secret était bien : " + utils.combinationToInt(secretCombination));
                 break;
             case 2:// duel
+                Computer computer = new Computer(gameName);
+                while (true) {
+                    int[] playerProposal = askPlayer();
+                    if (compareResponse(playerProposal)) {
+                        System.out.println("Bravo !!! Le nombre secret était bien : " + utils.combinationToInt(secretCombination));
+                        break;
+                    }
+                    int[] computerProposal = computer.computerProcessing(playerProposal,pattern);
+                    if (compareResponse(computerProposal)) {
+                        System.out.println("Yahah !!! J'ai gagné, t'as perdu et le nombre secret était bien : " + utils.combinationToInt(secretCombination));
+                        break;
+                    }
+                    computer.updateLimit(computerProposal, pattern);
+                }
                 break;
         }
     }
@@ -75,18 +92,27 @@ public class SearchMoreOrLess {
         int proposalLength = proposal.length;
         int goodNumber = 0;
         String outDisplay = "Proposition : " + utils.combinationToInt(proposal) + " -> Réponse : ";
+        pattern = "";
 
         for (int i = 0; i < proposalLength; i++) {
             if (proposal[i] == secretCombination[i]){
                 outDisplay += "=";
+                pattern += "=";
                 goodNumber++;
-            } else if (proposal[i] > secretCombination[i])
+            } else if (proposal[i] > secretCombination[i]) {
                 outDisplay += "-";
-            else if (proposal[i] < secretCombination[i])
+                pattern += "-";
+            } else if (proposal[i] < secretCombination[i]) {
                 outDisplay += "+";
+                pattern += "+";
+            }
         }
         System.out.println(outDisplay);
 
         return goodNumber == proposalLength;
+    }
+
+    public String getGameName() {
+        return gameName;
     }
 }
