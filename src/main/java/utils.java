@@ -194,4 +194,19 @@ public class utils {
             return false;
         }
     }
+
+    public static boolean tableContains (int[] table, int value) {
+        int tableLength = table.length;
+        for (int i = 0; i < tableLength; i++) {
+            if (table[i] == value)
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean hasDevMode (String[] paramUser) {
+        if (paramUser.length == 2 && paramUser[1].equals("dev"))
+            return true;
+        return false;
+    }
 }

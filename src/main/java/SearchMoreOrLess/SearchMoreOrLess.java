@@ -127,8 +127,4 @@ public class SearchMoreOrLess {
 
         return goodNumber == proposalLength;
     }
-
-    public String getGameName() {
-        return gameName;
-    }
 }

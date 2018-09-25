@@ -1,4 +1,4 @@
-package main.java;
+package main.java.ProjetMentor;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

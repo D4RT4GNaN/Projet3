@@ -1,8 +1,9 @@
 package main.java;
 
+import main.java.Mastermind.Mastermind;
+import main.java.ProjetMentor.MoreOrLess;
 import main.java.SearchMoreOrLess.SearchMoreOrLess;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -20,16 +21,17 @@ public class Menu {
         System.out.println("Choisissez votre jeu :");
         System.out.println("1 - Plus ou moins");
         System.out.println("2 - Recherche +/-");
+        System.out.println("3 - Mastermind");
         System.out.println("0 - Quitter");
         do {
             game = sc.next();
-            if (!game.equals("1") && !game.equals("2") && !game.equals("0"))
+            if (!game.equals("1") && !game.equals("2") && !game.equals("3") && !game.equals("0"))
                 System.err.println("Choisissez un des chiffres de la liste !");
             if (game.equals("0")) {
                 System.out.println("Thank's For Playing !!");
                 System.exit(0);
             }
-        }  while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("0"))));
+        }  while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("3") || game.equals("0"))));
 
         System.out.println();
         System.out.println("Choisissez votre mode jeu :");
@@ -37,9 +39,12 @@ public class Menu {
         System.out.println("2 - Duel");
         System.out.println("3 - Défenseur");
         do {
-            mode = sc.next();
-            dev = hasDevMode(sc.next());
-            if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3"))
+            sc = new Scanner(System.in);
+            String entryUser = sc.nextLine();
+            String[] paramUser = entryUser.split(" ");
+            mode = paramUser[0];
+            dev = utils.hasDevMode(paramUser);
+        if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3"))
                 System.err.println("Choisissez un des chiffres de la liste !");
         }  while (!(utils.isNumber(mode) && (mode.contains("1") || mode.contains("2") || mode.contains("3"))));
 
@@ -49,7 +54,7 @@ public class Menu {
      *Asking player to replay the same game
      */
     private boolean askReplay () {
-        String choice = "";
+        String choice;
 
         System.out.println();
         System.out.println("Voulez vous rejouez ?");
@@ -90,14 +95,13 @@ public class Menu {
                         break;
                     case 2:
                         new SearchMoreOrLess(Integer.parseInt(mode), dev);
+                        break;
+                    case 3:
+                        new Mastermind(Integer.parseInt(mode), dev);
+                        break;
                 }
             } while (askReplay());
         } while (true);
     }
 
-    private boolean hasDevMode (String mode) {
-        if (mode.contains("dev"))
-            return true;
-        return false;
-    }
 }
