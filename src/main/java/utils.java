@@ -4,7 +4,8 @@ import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class utils {
@@ -16,6 +17,21 @@ public class utils {
      */
     public static int randomInt(int min, int max) {
         int randomInt = min + (int) (Math.random() * (max - min));
+        return randomInt;
+    }
+
+    /**
+     *Return a random int between min value and max value
+     * @param min The minimum int you want
+     * @param max The maximum int you want
+     * @return A random int between min and max
+     */
+    public static int randomIntWithout(int min, int max, int[] withoutValue) {
+        int randomInt;
+        ArrayList withoutList = new ArrayList(Arrays.asList(withoutValue));
+        do {
+            randomInt = min + (int) (Math.random() * (max - min));
+        } while (withoutList.contains(randomInt));
         return randomInt;
     }
 
@@ -54,6 +70,23 @@ public class utils {
         }
         combinationInt = Integer.parseInt(combinationTemp);
         return combinationInt;
+    }
+
+    /**
+     *Convert the secret code from table to String cast
+     * @param randomCombination The table of the secret code
+     * @return The secret code casted into String
+     */
+    public static String combinationToString (int[] randomCombination) {
+        int combinationInt;
+        int combinationLength = randomCombination.length;
+        String combinationOut = "";
+
+        for (int i = 0; i < combinationLength; i++) {
+            combinationOut += Integer.toString(randomCombination[i]);
+        }
+
+        return combinationOut;
     }
 
     /**
@@ -195,6 +228,12 @@ public class utils {
         }
     }
 
+    /**
+     * Search if value is in table
+     * @param table the table where it search the value
+     * @param value the desired value
+     * @return true if value is in table
+     */
     public static boolean tableContains (int[] table, int value) {
         int tableLength = table.length;
         for (int i = 0; i < tableLength; i++) {
@@ -204,9 +243,30 @@ public class utils {
         return false;
     }
 
+    /**
+     * Search the occurence of one value in the table and remove it
+     * @param table the table where it search all occurrences of the value
+     * @param value the value whose occurrences we are looking for
+     * @return the table without the occurrences found
+     */
+    public static int[] removeOccurrences(int[] table, int value){
+        int[] tempTable = table;
+        for (int i = 0; i < tempTable.length; i++) {
+            if (tempTable[i] == value)
+                tempTable[i] = -1;
+        }
+        return tempTable;
+    }
+
+    /**
+     *Allows access to developer mode
+     * @param paramUser the keyword for the developer mode
+     * @return true if it's the correct keyword
+     */
     public static boolean hasDevMode (String[] paramUser) {
         if (paramUser.length == 2 && paramUser[1].equals("dev"))
             return true;
         return false;
     }
+
 }

@@ -17,8 +17,7 @@ public class Menu {
      * Asks the user what game and mode they want
      */
     private void askGame () {
-        System.out.println();
-        System.out.println("Choisissez votre jeu :");
+        System.out.println("\nChoisissez votre jeu :");
         System.out.println("1 - Plus ou moins");
         System.out.println("2 - Recherche +/-");
         System.out.println("3 - Mastermind");
@@ -33,8 +32,7 @@ public class Menu {
             }
         }  while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("3") || game.equals("0"))));
 
-        System.out.println();
-        System.out.println("Choisissez votre mode jeu :");
+        System.out.println("\nChoisissez votre mode jeu :");
         System.out.println("1 - Challenger");
         System.out.println("2 - Duel");
         System.out.println("3 - Défenseur");
@@ -56,8 +54,7 @@ public class Menu {
     private boolean askReplay () {
         String choice;
 
-        System.out.println();
-        System.out.println("Voulez vous rejouez ?");
+        System.out.println("\nVoulez vous rejouez ?");
         System.out.println("1 - Rejouer");
         System.out.println("2 - Retour au menu");
         System.out.println("0 - Quitter");
@@ -66,7 +63,7 @@ public class Menu {
             if (!choice.equals("1") && !choice.equals("2") && !choice.equals("0"))
                 System.err.println("Choisissez un des chiffres de la liste !");
             if (choice.equals("0")) {
-                System.out.println("Thank's For Playing !!");
+                System.out.println("\nThank's For Playing !!");
                 System.exit(0);
             }
         }  while (!(utils.isNumber(choice) && (choice.equals("1") || choice.equals("2") || choice.equals("0"))));
