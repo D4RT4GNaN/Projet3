@@ -1,6 +1,6 @@
-package main.java.Mastermind;
+package Mastermind;
 
-import main.java.utils;
+import Main.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +29,39 @@ public class Mastermind {
                 boolean endGame;
                 do {
                     int[] playerProposal = askPlayer();
-                    endGame = compareResponse(playerProposal);
+                    endGame = compareResponse(playerProposal, secretCombination);
                 } while(!endGame);
                 break;
             case 2: // Dual
+                Computer computer = new Computer();
+                System.out.println("Entrez une combinaison secrète !");
+                int[] secretCombinationDual = askPlayer();
+                int[] computerProposal = new int[secretCombinationLength];
+                int presentComputer = -1;
+                int goodNumberComputer = 0;
+
+
+                while (true) {
+                    System.out.print("\nJoueur : ");
+                    int[] playerProposal = askPlayer();
+                    if (compareResponse(playerProposal, secretCombination)) {
+                        System.out.println("Joueur WIN");
+                        break;
+                    }
+
+                    System.out.print("\nOrdinateur : ");
+                    computerProposal = computer.computerProcessing(computerProposal, presentComputer, goodNumberComputer);
+                    if (compareResponse(computerProposal, secretCombinationDual)) {
+                        System.out.println("Ordinateur WIN");
+                        break;
+                    }
+                    presentComputer = present;
+                    goodNumberComputer = goodNumber;
+                }
                 break;
             case 3: // Defense
-                Computer computer = new Computer();
-                int[] computerProposal = new int[secretCombinationLength];
+                computer = new Computer();
+                computerProposal = new int[secretCombinationLength];
                 present = -1;
                 int loop = 0;
 
@@ -46,7 +71,7 @@ public class Mastermind {
                 while (true) {
                     computerProposal = computer.computerProcessing(computerProposal, present, goodNumber);
                     loop++;
-                    if (compareResponse(computerProposal) || loop == utils.getMaxTries("Mastermind")) {
+                    if (compareResponse(computerProposal, secretCombination) || loop == utils.getMaxTries("Mastermind")) {
                         if (loop == utils.getMaxTries("Mastermind")) {
                             System.out.println("Perdu le bon chiffre était : " + utils.combinationToString(secretCombination));
                             break;
@@ -80,9 +105,10 @@ public class Mastermind {
      * Compare each digit of the number entered with each digit of the secret code
      * and display there are number present or in the right place
      * @param proposal The number entered by the player or the computer
+     * @param secretCombination The secret code
      * @return True if the number entered is the same as the secret code
      */
-    private boolean compareResponse (int[] proposal) {
+    private boolean compareResponse (int[] proposal, int[] secretCombination) {
         int proposalLength = proposal.length;
         present = 0;
         goodNumber = 0;

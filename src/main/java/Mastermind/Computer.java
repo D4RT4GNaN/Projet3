@@ -1,6 +1,6 @@
-package main.java.Mastermind;
+package Mastermind;
 
-import main.java.utils;
+import Main.utils;
 
 import java.util.*;
 
@@ -182,7 +182,6 @@ class Computer {
         for (int item : listTemp)
             individualWhitePins += utils.countOccurrences(proposalTemp, item);
 
-        System.out.println(individualBlackPins + " " + individualWhitePins);
         isSame = pattern[0] == individualBlackPins && pattern[1] == individualWhitePins;
 
         return isSame;

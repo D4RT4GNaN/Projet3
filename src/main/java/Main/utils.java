@@ -1,4 +1,4 @@
-package main.java;
+package Main;
 
 import java.awt.*;
 import java.io.FileInputStream;

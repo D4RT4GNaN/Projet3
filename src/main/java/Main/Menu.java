@@ -1,8 +1,8 @@
-package main.java;
+package Main;
 
-import main.java.Mastermind.Mastermind;
-import main.java.ProjetMentor.MoreOrLess;
-import main.java.SearchMoreOrLess.SearchMoreOrLess;
+import Mastermind.Mastermind;
+import SearchMoreOrLess.SearchMoreOrLess;
+import ProjetMentor.MoreOrLess;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ class Menu {
     /**
      * Asks the user what game and mode they want
      */
-    private void askGame () {
+    private void askGame() {
         System.out.println("\nChoisissez votre jeu :");
         System.out.println("1 - Plus ou moins");
         System.out.println("2 - Recherche +/-");
@@ -30,7 +30,8 @@ class Menu {
                 System.out.println("Thank's For Playing !!");
                 System.exit(0);
             }
-        }  while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("3") || game.equals("0"))));
+        }
+        while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("3") || game.equals("0"))));
 
         System.out.println("\nChoisissez votre mode jeu :");
         System.out.println("1 - Challenger");
@@ -42,16 +43,16 @@ class Menu {
             String[] paramUser = entryUser.split(" ");
             mode = paramUser[0];
             dev = utils.hasDevMode(paramUser);
-        if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3"))
+            if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3"))
                 System.err.println("Choisissez un des chiffres de la liste !");
-        }  while (!(utils.isNumber(mode) && (mode.contains("1") || mode.contains("2") || mode.contains("3"))));
+        } while (!(utils.isNumber(mode) && (mode.contains("1") || mode.contains("2") || mode.contains("3"))));
 
     }
 
     /**
      * Asking player to replay the same game
      */
-    private boolean askReplay () {
+    private boolean askReplay() {
         String choice;
 
         System.out.println("\nVoulez vous rejouez ?");
@@ -66,11 +67,11 @@ class Menu {
                 System.out.println("\nThank's For Playing !!");
                 System.exit(0);
             }
-        }  while (!(utils.isNumber(choice) && (choice.equals("1") || choice.equals("2") || choice.equals("0"))));
+        } while (!(utils.isNumber(choice) && (choice.equals("1") || choice.equals("2") || choice.equals("0"))));
         switch (choice) {
-            case "1" :
+            case "1":
                 return true;
-            case "2" :
+            case "2":
                 return false;
         }
         return false;

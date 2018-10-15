@@ -1,6 +1,6 @@
-package main.java.SearchMoreOrLess;
+package SearchMoreOrLess;
 
-import main.java.utils;
+import Main.utils;
 
 import java.util.Scanner;
 

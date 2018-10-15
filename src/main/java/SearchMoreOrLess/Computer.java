@@ -1,6 +1,6 @@
-package main.java.SearchMoreOrLess;
+package SearchMoreOrLess;
 
-import main.java.utils;
+import Main.utils;
 
 public class Computer {
     private int[] min;
