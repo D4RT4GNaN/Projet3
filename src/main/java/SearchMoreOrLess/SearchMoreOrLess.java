@@ -107,19 +107,19 @@ public class SearchMoreOrLess {
     private boolean compareResponse (int[] proposal) {
         int proposalLength = proposal.length;
         int goodNumber = 0;
-        String outDisplay = "Proposition : " + utils.combinationToInt(proposal) + " -> Réponse : ";
+        StringBuilder outDisplay = new StringBuilder("Proposition : " + utils.combinationToInt(proposal) + " -> Réponse : ");
         pattern = "";
 
         for (int i = 0; i < proposalLength; i++) {
             if (proposal[i] == secretCombination[i]){
-                outDisplay += "=";
+                outDisplay.append("=");
                 pattern += "=";
                 goodNumber++;
             } else if (proposal[i] > secretCombination[i]) {
-                outDisplay += "-";
+                outDisplay.append("-");
                 pattern += "-";
             } else if (proposal[i] < secretCombination[i]) {
-                outDisplay += "+";
+                outDisplay.append("+");
                 pattern += "+";
             }
         }

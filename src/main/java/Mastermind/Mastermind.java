@@ -2,6 +2,8 @@ package main.java.Mastermind;
 
 import main.java.utils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Mastermind {
@@ -42,7 +44,7 @@ public class Mastermind {
                 secretCombination = askPlayer();
 
                 while (true) {
-                    computerProposal = computer.computerProcessingDefense(computerProposal, present, goodNumber);
+                    computerProposal = computer.computerProcessing(computerProposal, present, goodNumber);
                     loop++;
                     if (compareResponse(computerProposal) || loop == utils.getMaxTries("Mastermind")) {
                         if (loop == utils.getMaxTries("Mastermind")) {
@@ -69,7 +71,7 @@ public class Mastermind {
             System.out.println("Donnez un nombre de " + secretCombinationLength + " chiffres :");
             scanner = sc.next();
         } while (!(utils.isNumber(scanner) && utils.hasSameLength(scanner, "Mastermind")));
-        playerProposal = utils.intToCombination(Integer.parseInt(scanner));
+        playerProposal = utils.stringToCombination(scanner);
 
         return playerProposal;
     }
@@ -96,17 +98,17 @@ public class Mastermind {
             }
         }
 
-        for (int i = 0; i < proposalLength; i++) {
-            if (utils.tableContains(secretCombinationTemp,proposal[i])) {
-                secretCombinationTemp = utils.removeOccurrences(secretCombinationTemp, proposal[i]);
-                present++;
-            }
+        List<Integer> listTemp = new ArrayList<>();
+        for (int item : proposal) {
+            if (utils.tableContains(secretCombinationTemp,item) && !(listTemp.contains(item)))
+                listTemp.add(item);
         }
 
-        if (present != 0) {
-            outDisplay += present + " présent(s)";
-            if (goodNumber != 0)
-                outDisplay += ", " + goodNumber + " bien placé(s)";
+        for (int item : listTemp)
+            present += utils.countOccurrences(secretCombinationTemp, item);
+
+        if (present != 0 && goodNumber != 0) {
+            outDisplay += present + " présent(s)" + ", " + goodNumber + " bien placé(s)";
         } else if (goodNumber != 0) {
             outDisplay += goodNumber + " bien placé(s)";
             if (goodNumber == proposalLength)

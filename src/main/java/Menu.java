@@ -6,7 +6,7 @@ import main.java.SearchMoreOrLess.SearchMoreOrLess;
 
 import java.util.Scanner;
 
-public class Menu {
+class Menu {
 
     private Scanner sc = new Scanner(System.in);
     private String game;
@@ -49,7 +49,7 @@ public class Menu {
     }
 
     /**
-     *Asking player to replay the same game
+     * Asking player to replay the same game
      */
     private boolean askReplay () {
         String choice;
@@ -77,11 +77,11 @@ public class Menu {
     }
 
     /**
-     *run the menu to choose the game mode
+     * run the menu to choose the game mode
      */
-    public void runMenu () {
+    void runMenu() {
         System.out.println("Bienvenue sur le multi jeux");
-        do {
+        while (true) {
             askGame();
             System.out.println();
             int gameInt = Integer.parseInt(game);
@@ -98,7 +98,7 @@ public class Menu {
                         break;
                 }
             } while (askReplay());
-        } while (true);
+        }
     }
 
 }
