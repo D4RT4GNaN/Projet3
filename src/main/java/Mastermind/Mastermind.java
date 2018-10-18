@@ -1,6 +1,8 @@
 package Mastermind;
 
 import Main.utils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,39 +14,51 @@ public class Mastermind {
     private Scanner sc = new Scanner(System.in);
     private int present;
     private int goodNumber;
-
+    private int maxTries;
+    private Logger logger = LogManager.getLogger("main.java.Mastermind.Mastermind");
     private int[] secretCombination;
 
     private void init () {
+        maxTries = utils.getMaxTries("Mastermind");
         secretCombinationLength = utils.getSecretCodeLength("Mastermind");
         secretCombination = utils.randomCombination(secretCombinationLength);
+        logger.info("Creating the secret code");
     }
 
     public Mastermind (int mode, boolean dev) {
         init();
+        int loop;
         if (dev)
             System.out.println("(Combinaison secrète : " + utils.combinationToString(secretCombination) + ")");
         switch (mode) {
             case 1: // Challenger
+                loop = 0;
                 boolean endGame;
                 do {
+                    loop++;
                     int[] playerProposal = askPlayer();
                     endGame = compareResponse(playerProposal, secretCombination);
+                    if (endGame)
+                        logger.info("Player found the secret code in " + loop + " move(s)");
                 } while(!endGame);
                 break;
             case 2: // Dual
                 Computer computer = new Computer();
                 System.out.println("Entrez une combinaison secrète !");
                 int[] secretCombinationDual = askPlayer();
+                logger.info("Player set his secret code to " + secretCombinationDual);
                 int[] computerProposal = new int[secretCombinationLength];
                 int presentComputer = -1;
                 int goodNumberComputer = 0;
+                loop = 0;
 
 
                 while (true) {
+                    loop++;
                     System.out.print("\nJoueur : ");
                     int[] playerProposal = askPlayer();
                     if (compareResponse(playerProposal, secretCombination)) {
+                        logger.info("Player win in " + loop + " move(s)");
                         System.out.println("Joueur WIN");
                         break;
                     }
@@ -52,6 +66,7 @@ public class Mastermind {
                     System.out.print("\nOrdinateur : ");
                     computerProposal = computer.computerProcessing(computerProposal, presentComputer, goodNumberComputer);
                     if (compareResponse(computerProposal, secretCombinationDual)) {
+                        logger.info("Computer win in " + loop + " move(s)");
                         System.out.println("Ordinateur WIN");
                         break;
                     }
@@ -63,19 +78,21 @@ public class Mastermind {
                 computer = new Computer();
                 computerProposal = new int[secretCombinationLength];
                 present = -1;
-                int loop = 0;
+                loop = 0;
 
                 System.out.println("Entrez une combinaison secrète !");
                 secretCombination = askPlayer();
+                logger.info("Player set the secret code to " + utils.combinationToString(secretCombination));
 
                 while (true) {
                     computerProposal = computer.computerProcessing(computerProposal, present, goodNumber);
                     loop++;
-                    if (compareResponse(computerProposal, secretCombination) || loop == utils.getMaxTries("Mastermind")) {
-                        if (loop == utils.getMaxTries("Mastermind")) {
+                    if (compareResponse(computerProposal, secretCombination) || loop == maxTries) {
+                        if (loop == maxTries) {
                             System.out.println("Perdu le bon chiffre était : " + utils.combinationToString(secretCombination));
                             break;
                         }
+                        logger.info("Computer found the secret code in " + loop + " move(s)");
                         System.out.println("En seulement " + loop + " tours !!");
                         break;
                     }

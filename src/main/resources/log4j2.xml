@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="Latest" fileName="Logs/latest.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%-5level ] [%logger{36}]  : %msg%n"/>
+        </File>
+        <File name="History" fileName="Logs/${date:yyyy-MM-dd_HH-mm}.log" immediateFlush="false" append="false">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%-5level ] [%logger{36}]  : %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="History"/>
+            <AppenderRef ref="Latest"/>
+        </Root>
+    </Loggers>
+</Configuration>

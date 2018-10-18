@@ -1,5 +1,8 @@
 package Main;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,6 +10,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class utils {
+
+    private static Logger logger = LogManager.getLogger("main.java.Main.utils");
+
     /**
      * Return a random int between min value and max value
      * @param min The minimum int you want
@@ -155,15 +161,19 @@ public class utils {
         int secretCodeLength;
 
         try {
+            logger.info("Reading config file");
             FileInputStream config = new FileInputStream("src/main/resources/config.properties");
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
+            logger.error(e);
             System.err.println("Le fichier n'existe pas !");
         } catch (IOException e) {
+            logger.error(e);
             System.err.println("Impossible de lire ou d'écrire dans le fichier.");
         }
 
+        logger.info("Recovered the length of the secret code");
         secretCodeLength = Integer.parseInt(properties.getProperty("number-case-" + game));
 
         return secretCodeLength;
@@ -179,15 +189,19 @@ public class utils {
         int maxTries;
 
         try {
+            logger.info("Reading config file");
             FileInputStream config = new FileInputStream("src/main/resources/config.properties");
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
+            logger.error(e);
             System.err.println("Le fichier n'existe pas !");
         } catch (IOException e) {
+            logger.error(e);
             System.err.println("Impossible de lire ou d'écrire dans le fichier.");
         }
 
+        logger.info("Recovered the number of max tries");
         maxTries = Integer.parseInt(properties.getProperty("number-tries-" + game));
 
         return maxTries;
@@ -203,6 +217,7 @@ public class utils {
             Integer.parseInt(string);
             return true;
         } catch (NumberFormatException e) {
+            logger.warn("Only numbers are accepted");
             System.err.println("Caractère(s) non accepté(s) : Veuillez entrer un nombre !");
             return false;
         }
@@ -218,6 +233,7 @@ public class utils {
         if (string.length() == secretCodeLength)
             return true;
         else {
+            logger.warn("Input length different from that expected (" + secretCodeLength + ")");
             System.err.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
             return false;
         }

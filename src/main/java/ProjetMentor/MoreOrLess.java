@@ -1,5 +1,8 @@
 package ProjetMentor;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +12,7 @@ import java.util.Scanner;
 public class MoreOrLess {
 
     Properties properties = new Properties();
+    private Logger logger = LogManager.getLogger("main.java.MoreOrLess.MoreOrLess");
 
     public MoreOrLess (boolean developMode) {
         runMoreOrLess(developMode);
@@ -24,14 +28,18 @@ public class MoreOrLess {
      */
     public int randomSecretCombination () {
         try {
+            logger.info("Reading config file");
             FileInputStream config = new FileInputStream("src/main/resources/config.properties");
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
+            logger.error(e);
             System.out.println("Le fichier n'existe pas !");
         } catch (IOException e) {
+            logger.error(e);
             System.out.println("Impossible de lire ou d'écrire dans le fichier.");
         }
+        logger.info("Recovered the length of the secret code");
         int caseNumber = Integer.parseInt(properties.getProperty("number-case-MoreOrLess"));
         int [] digitSecretCombination = new int [caseNumber];
         int secretCombination;
@@ -45,6 +53,7 @@ public class MoreOrLess {
             stringSecretCombination = stringSecretCombination + digitSecretCombination[i];
         }
         secretCombination = Integer.parseInt(stringSecretCombination);
+        logger.info("Creating and set the secret code to " + secretCombination);
         return secretCombination;
     }
 
@@ -90,12 +99,15 @@ public class MoreOrLess {
         System.out.println("Bienvenue sur le jeu du plus ou moins");
         if (developMode)
             System.out.println("nombre secret : " + secretNumber);
+        logger.info("Recovered the number of maximum's tries in config file");
         System.out.println("A vous de jouez (" + Integer.parseInt(properties.getProperty("number-case-MoreOrLess")) + ") :");
         boolean endGame;
         do {
             lapCounter++;
             int userNumber = askNumber();
             endGame = compareNumber(userNumber, secretNumber, lapCounter, triesMax);
+            if (endGame)
+                logger.info("Player found the secret code in " + lapCounter + " move(s)");
         } while (!endGame);
     }
 }

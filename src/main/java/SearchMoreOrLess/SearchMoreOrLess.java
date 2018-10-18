@@ -1,6 +1,8 @@
 package SearchMoreOrLess;
 
 import Main.utils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ public class SearchMoreOrLess {
     private String gameName = "SearchMoreOrLess";
     private int secretCodeLength;
     private String pattern;
+    private Logger logger = LogManager.getLogger("main.java.SearchMoreOrLess.SearchMoreOrLess");
 
     /**
      * Initialization method the secret number and the pattern
@@ -21,6 +24,7 @@ public class SearchMoreOrLess {
         for (int i = 0; i < secretCodeLength; i++) {
             pattern += "*";
         }
+        logger.info("Creating the secret code");
     }
 
     /**
@@ -41,39 +45,51 @@ public class SearchMoreOrLess {
                     endGame = compareResponse(playerProposal);
                     numberTries++;
                     if (numberTries == numberTriesMax) {
+                        logger.info("Player don't found the secret code that was " + utils.combinationToInt(secretCombination));
                         System.out.println("Désolé c'est perdu ! Le nombre secret était : " + utils.combinationToInt(secretCombination));
                         break;
                     }
                 } while (!endGame);
-                if (endGame)
+                if (endGame) {
+                    logger.info("Player found the secret code in " + numberTries + " move(s)");
                     System.out.println("Bravo !!! Le nombre secret était bien : " + utils.combinationToInt(secretCombination));
+                }
                 break;
+
             case 2:// duel
                 Computer computer = new Computer(gameName);
                 while (true) {
+                    numberTries++;
                     int[] playerProposal = askPlayer();
                     if (compareResponse(playerProposal)) {
+                        logger.info("Player win and found the secret code in " + numberTries + " move(s)");
                         System.out.println("Bravo !!! Le nombre secret était bien : " + utils.combinationToInt(secretCombination));
                         break;
                     }
                     int[] computerProposal = computer.computerProcessing(playerProposal,pattern);
                     if (compareResponse(computerProposal)) {
+                        logger.info("Computer win and found the secret code in " + numberTries + " move(s)");
                         System.out.println("Yahah !!! J'ai gagné, t'as perdu et le nombre secret était bien : " + utils.combinationToInt(secretCombination));
                         break;
                     }
                     computer.updateLimit(computerProposal, pattern);
                 }
                 break;
+
             case 3://défenseur
+                logger.info("Initialized computer");
                 int computerLoop = 0;
                 computer = new Computer(gameName);
                 secretCombination = askPlayer();
+                logger.info("Player set the secret code to " + secretCombination);
                 int[] computerProposal = null;
 
+                logger.info("Computer starting research");
                 while (true) {
                     computerLoop++;
                     computerProposal = computer.computerProcessing(computerProposal,pattern);
                     if (compareResponse(computerProposal)) {
+                        logger.info("Computer found the secret code in " + computerLoop + " move(s)");
                         System.out.println("Yahah !!! J'ai gagné en : " + computerLoop + " coup(s) et le nombre secret était bien : " + utils.combinationToInt(secretCombination));
                         break;
                     }

@@ -3,6 +3,8 @@ package Main;
 import Mastermind.Mastermind;
 import SearchMoreOrLess.SearchMoreOrLess;
 import ProjetMentor.MoreOrLess;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
@@ -12,6 +14,7 @@ class Menu {
     private String game;
     private String mode;
     private boolean dev;
+    private Logger logger = LogManager.getLogger("main.java.Main.Menu");
 
     /**
      * Asks the user what game and mode they want
@@ -24,10 +27,13 @@ class Menu {
         System.out.println("0 - Quitter");
         do {
             game = sc.next();
-            if (!game.equals("1") && !game.equals("2") && !game.equals("3") && !game.equals("0"))
+            if (!game.equals("1") && !game.equals("2") && !game.equals("3") && !game.equals("0")) {
                 System.err.println("Choisissez un des chiffres de la liste !");
+                logger.warn("Bad input numbers : numbers must be in list");
+            }
             if (game.equals("0")) {
                 System.out.println("Thank's For Playing !!");
+                logger.info("Stopping program");
                 System.exit(0);
             }
         }
@@ -43,8 +49,10 @@ class Menu {
             String[] paramUser = entryUser.split(" ");
             mode = paramUser[0];
             dev = utils.hasDevMode(paramUser);
-            if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3"))
+            if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3")) {
                 System.err.println("Choisissez un des chiffres de la liste !");
+                logger.warn("Bad input numbers : numbers must be in list");
+            }
         } while (!(utils.isNumber(mode) && (mode.contains("1") || mode.contains("2") || mode.contains("3"))));
 
     }
@@ -61,10 +69,13 @@ class Menu {
         System.out.println("0 - Quitter");
         do {
             choice = sc.next();
-            if (!choice.equals("1") && !choice.equals("2") && !choice.equals("0"))
+            if (!choice.equals("1") && !choice.equals("2") && !choice.equals("0")) {
                 System.err.println("Choisissez un des chiffres de la liste !");
+                logger.warn("Bad input numbers : numbers must be in list");
+            }
             if (choice.equals("0")) {
                 System.out.println("\nThank's For Playing !!");
+                logger.info("Stopping program");
                 System.exit(0);
             }
         } while (!(utils.isNumber(choice) && (choice.equals("1") || choice.equals("2") || choice.equals("0"))));
@@ -89,13 +100,18 @@ class Menu {
             do {
                 switch (gameInt) {
                     case 1:
+                        logger.info("More or less game started");
                         new MoreOrLess();
                         break;
                     case 2:
-                        new SearchMoreOrLess(Integer.parseInt(mode), dev);
+                        int intMode = Integer.parseInt(mode);
+                        logger.info("Search more or less game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
+                        new SearchMoreOrLess(intMode, dev);
                         break;
                     case 3:
-                        new Mastermind(Integer.parseInt(mode), dev);
+                        intMode = Integer.parseInt(mode);
+                        logger.info("Mastermind game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
+                        new Mastermind(intMode, dev);
                         break;
                 }
             } while (askReplay());
