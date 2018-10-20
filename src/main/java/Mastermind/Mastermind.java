@@ -43,7 +43,7 @@ public class Mastermind {
                 } while(!endGame);
                 break;
             case 2: // Dual
-                Computer computer = new Computer();
+                ComputerMastermind computer = new ComputerMastermind();
                 System.out.println("Entrez une combinaison secrète !");
                 int[] secretCombinationDual = askPlayer();
                 logger.info("Player set his secret code to " + secretCombinationDual);
@@ -64,9 +64,10 @@ public class Mastermind {
                     }
 
                     System.out.print("\nOrdinateur : ");
-                    computerProposal = computer.computerProcessing(computerProposal, presentComputer, goodNumberComputer);
+
+                    computerProposal = computer.computerProcessing(computerProposal, Utils.intArrayToObject(goodNumberComputer, presentComputer));
                     if (compareResponse(computerProposal, secretCombinationDual)) {
-                        logger.info("Computer win in " + loop + " move(s)");
+                        logger.info("ComputerMastermind win in " + loop + " move(s)");
                         System.out.println("Ordinateur WIN");
                         break;
                     }
@@ -75,7 +76,7 @@ public class Mastermind {
                 }
                 break;
             case 3: // Defense
-                computer = new Computer();
+                computer = new ComputerMastermind();
                 computerProposal = new int[secretCombinationLength];
                 present = -1;
                 loop = 0;
@@ -85,14 +86,14 @@ public class Mastermind {
                 logger.info("Player set the secret code to " + Utils.combinationToString(secretCombination));
 
                 while (true) {
-                    computerProposal = computer.computerProcessing(computerProposal, present, goodNumber);
+                    computerProposal = computer.computerProcessing(computerProposal, Utils.intArrayToObject(goodNumber, present));
                     loop++;
                     if (compareResponse(computerProposal, secretCombination) || loop == maxTries) {
                         if (loop == maxTries) {
                             System.out.println("Perdu le bon chiffre était : " + Utils.combinationToString(secretCombination));
                             break;
                         }
-                        logger.info("Computer found the secret code in " + loop + " move(s)");
+                        logger.info("ComputerMastermind found the secret code in " + loop + " move(s)");
                         System.out.println("En seulement " + loop + " tours !!");
                         break;
                     }

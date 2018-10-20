@@ -254,4 +254,8 @@ public class Utils {
 
         return numberPossibleCombination;
     }
+
+    public static Object intArrayToObject (int goodNumber, int present) {
+        return new int[]{goodNumber, present};
+    }
 }

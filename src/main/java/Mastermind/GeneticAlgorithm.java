@@ -1,53 +1,12 @@
 package Mastermind;
 
+import java.util.*;
 import Utils.Utils;
 
-import java.util.*;
+public class GeneticAlgorithm {
 
-class Computer {
-    private List <Integer> sureNumber;
-    private int loop;
     private HashSet<String> population;
 
-    Computer() {
-        init();
-    }
-
-    private void init () {
-        sureNumber = new ArrayList<>();
-        loop = 0;
-    }
-
-    /**
-     * Analyze the previous proposal and construct a table of the numbers present in the secret code and make a proposal
-     * @param proposal The previous proposal
-     * @param present The amount of proposal's number in the secret code
-     * @param goodNumber The amount of proposal's number which are in the same place as those of the secret code
-     * @return The proposal of the computer
-     */
-    int[] computerProcessing(int[] proposal, int present, int goodNumber) {
-        int[] computerProposal = proposal;
-        int[] pattern = new int[] {goodNumber,present};
-
-        if (goodNumber != 0 && sureNumber.size() < (Utils.getSecretCodeLength("Mastermind"))) {
-            for (int i = 0; i < goodNumber; i++) {
-                sureNumber.add(computerProposal[0]);
-            }
-        }
-
-        if (sureNumber.size() < (Utils.getSecretCodeLength("Mastermind"))) {
-            if (present != -1) {
-                int newValue = computerProposal[0] + 1;
-                for (int i = 0; i < Utils.getSecretCodeLength("Mastermind"); i++) {
-                    computerProposal[i] = newValue;
-                }
-            }
-        } else {
-            computerProposal = this.geneticAlgorithm(sureNumber, computerProposal, pattern);
-        }
-
-        return computerProposal;
-    }
 
     /**
      * Genetic algorithm used for resolved Mastermind
@@ -56,15 +15,14 @@ class Computer {
      * @param pattern The pattern of black and white pins associated with the last proposal
      * @return The new proposal of the computer
      */
-    private int[] geneticAlgorithm (List numberAvailable, int[] computerProposal, int[] pattern) {
+    public int[] geneticAlgorithm (List numberAvailable, int[] computerProposal, int[] pattern, int loop) {
         if (loop == 0) {
-            for (int i = 0; i < sureNumber.size(); i++) {
-                computerProposal[i] = sureNumber.get(i);
+            for (int i = 0; i < numberAvailable.size(); i++) {
+                computerProposal[i] = (int)numberAvailable.get(i);
             }
             population = initPopulation(numberAvailable, 100);
-            loop++;
         } else {
-            computerProposal = Utils.stringToCombination(this.fitness(computerProposal, (HashSet<String>)population, pattern));
+            computerProposal = Utils.stringToCombination(fitness(computerProposal, population, pattern));
             if (population.size() == 1 && pattern[0] != numberAvailable.size())
                 population = initPopulation(numberAvailable, 100);
         }
@@ -187,4 +145,3 @@ class Computer {
         return isSame;
     }
 }
-

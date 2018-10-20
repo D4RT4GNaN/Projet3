@@ -1,22 +1,20 @@
 package SearchMoreOrLess;
 
 import Utils.Utils;
+import Utils.Computer;
 
-public class Computer {
+public class ComputerSearchMoreOrLess extends Computer {
     private int[] min;
     private int[] max;
     private int[] computerProposal;
 
-    public Computer (String gameName) {
-        init(gameName);
+    public ComputerSearchMoreOrLess() {
+        init();
     }
 
-    /**
-     * Initialization method for the limit of each digit
-     * @param gameName The name of the game
-     */
-    public void init (String gameName) {
-        int secretCodeLength = Utils.getSecretCodeLength(gameName);
+    @Override
+    protected void init () {
+        int secretCodeLength = Utils.getSecretCodeLength("SearchMoreOrLess");
         computerProposal = new int[secretCodeLength];
         min = new int[secretCodeLength];
         max = new int[secretCodeLength];
@@ -49,12 +47,14 @@ public class Computer {
      * @param playerPattern The pattern returned by the program and based on the player's proposal
      * @return The number proposed by the computer
      */
-    public int[] computerProcessing (int[] playerProposal, String playerPattern) {
-        updateLimit(playerProposal, playerPattern);
-        String[] splitedPlayerPattern = playerPattern.split("");
+    @Override
+    public int[] computerProcessing (int[] playerProposal, Object playerPattern) {
+        String pattern = (String) playerPattern;
+        updateLimit(playerProposal, pattern);
+        String[] splicedPlayerPattern = pattern.split("");
 
         for (int i = 0; i < Utils.getSecretCodeLength("SearchMoreOrLess"); i++) {
-            if (splitedPlayerPattern[i].equals("="))
+            if (splicedPlayerPattern[i].equals("="))
                 computerProposal[i] = playerProposal[i];
             else
                 computerProposal[i] = (min[i] + max[i]) / 2;

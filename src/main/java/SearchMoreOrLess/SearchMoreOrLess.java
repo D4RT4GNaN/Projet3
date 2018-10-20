@@ -57,7 +57,7 @@ public class SearchMoreOrLess {
                 break;
 
             case 2:// duel
-                Computer computer = new Computer(gameName);
+                ComputerSearchMoreOrLess computer = new ComputerSearchMoreOrLess();
                 while (true) {
                     numberTries++;
                     int[] playerProposal = askPlayer();
@@ -68,7 +68,7 @@ public class SearchMoreOrLess {
                     }
                     int[] computerProposal = computer.computerProcessing(playerProposal,pattern);
                     if (compareResponse(computerProposal)) {
-                        logger.info("Computer win and found the secret code in " + numberTries + " move(s)");
+                        logger.info("ComputerSearchMoreOrLess win and found the secret code in " + numberTries + " move(s)");
                         System.out.println("Yahah !!! J'ai gagné, t'as perdu et le nombre secret était bien : " + Utils.combinationToInt(secretCombination));
                         break;
                     }
@@ -79,17 +79,17 @@ public class SearchMoreOrLess {
             case 3://défenseur
                 logger.info("Initialized computer");
                 int computerLoop = 0;
-                computer = new Computer(gameName);
+                computer = new ComputerSearchMoreOrLess();
                 secretCombination = askPlayer();
                 logger.info("Player set the secret code to " + secretCombination);
                 int[] computerProposal = null;
 
-                logger.info("Computer starting research");
+                logger.info("ComputerSearchMoreOrLess starting research");
                 while (true) {
                     computerLoop++;
                     computerProposal = computer.computerProcessing(computerProposal,pattern);
                     if (compareResponse(computerProposal)) {
-                        logger.info("Computer found the secret code in " + computerLoop + " move(s)");
+                        logger.info("ComputerSearchMoreOrLess found the secret code in " + computerLoop + " move(s)");
                         System.out.println("Yahah !!! J'ai gagné en : " + computerLoop + " coup(s) et le nombre secret était bien : " + Utils.combinationToInt(secretCombination));
                         break;
                     }
