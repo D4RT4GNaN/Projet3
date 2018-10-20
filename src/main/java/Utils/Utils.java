@@ -105,14 +105,8 @@ public class Utils {
         return combinationTable;
     }
 
-    /**
-     * Get the value of case number in the property's file
-     * @param game The name of game you play
-     * @return The number of case contained in the secret code
-     */
-    public static int getSecretCodeLength (String game) {
+    private static Properties loadConfigFile () {
         Properties properties = new Properties();
-        int secretCodeLength;
 
         try {
             logger.info("Reading config file");
@@ -127,10 +121,19 @@ public class Utils {
             System.err.println("Impossible de lire ou d'écrire dans le fichier.");
         }
 
-        logger.info("Recovered the length of the secret code");
-        secretCodeLength = Integer.parseInt(properties.getProperty("number-case-" + game));
+        return properties;
+    }
 
-        return secretCodeLength;
+    /**
+     * Get the value of case number in the property's file
+     * @param game The name of game you play
+     * @return The number of case contained in the secret code
+     */
+    public static int getSecretCodeLength (String game) {
+        Properties properties = loadConfigFile();
+        logger.info("Recovered the length of the secret code");
+
+        return Integer.parseInt(properties.getProperty("number-case-" + game));
     }
 
     /**
@@ -139,26 +142,10 @@ public class Utils {
      * @return The number tries you have to found the secret code
      */
     public static int getMaxTries (String game) {
-        Properties properties = new Properties();
-        int maxTries;
-
-        try {
-            logger.info("Reading config file");
-            FileInputStream config = new FileInputStream("src/main/resources/config.properties");
-            properties.load(config);
-            config.close();
-        } catch (FileNotFoundException e) {
-            logger.error(e);
-            System.err.println("Le fichier n'existe pas !");
-        } catch (IOException e) {
-            logger.error(e);
-            System.err.println("Impossible de lire ou d'écrire dans le fichier.");
-        }
-
+        Properties properties = loadConfigFile();
         logger.info("Recovered the number of max tries");
-        maxTries = Integer.parseInt(properties.getProperty("number-tries-" + game));
 
-        return maxTries;
+        return Integer.parseInt(properties.getProperty("number-tries-" + game));
     }
 
     /**
@@ -229,7 +216,13 @@ public class Utils {
      * @return true if it's the correct keyword
      */
     public static boolean hasDevMode(String[] paramUser) {
-        return paramUser.length == 2 && paramUser[1].equals("dev");
+        Properties properties = loadConfigFile();
+        if (Boolean.parseBoolean(properties.getProperty("developer-mode")))
+            return true;
+        else if (paramUser.length == 2 && paramUser[1].equals("dev"))
+            return true;
+        else
+            return false;
     }
 
     /**

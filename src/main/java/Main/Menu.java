@@ -27,6 +27,7 @@ class Menu {
         System.out.println("2 - Recherche +/-");
         System.out.println("3 - Mastermind");
         System.out.println("0 - Quitter");
+
         do {
             game = sc.next();
             exitProgram(game);
@@ -37,6 +38,7 @@ class Menu {
         System.out.println("1 - Challenger");
         System.out.println("2 - Duel");
         System.out.println("3 - Défenseur");
+
         do {
             sc = new Scanner(System.in);
             String entryUser = sc.nextLine();
@@ -57,16 +59,19 @@ class Menu {
         System.out.println("1 - Rejouer");
         System.out.println("2 - Retour au menu");
         System.out.println("0 - Quitter");
+
         do {
             choice = sc.next();
             exitProgram(choice);
         } while (!selectNumber(choice, "012"));
+
         switch (choice) {
             case "1":
                 return true;
             case "2":
                 return false;
         }
+
         return false;
     }
 
