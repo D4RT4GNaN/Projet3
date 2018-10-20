@@ -37,15 +37,15 @@ public class Mastermind extends Game {
     protected void runGame(int mode, boolean dev) {
         switch (mode) {
             case 1: // Challenger
-                mastermind.challenger(secretCombination, dev, logger);
+                mastermind.challenger(dev);
                 break;
 
             case 2: // Dual
-                mastermind.dual(secretCombination, dev, logger);
+                mastermind.dual(dev);
                 break;
 
             case 3: // Defense
-                mastermind.defense(logger);
+                mastermind.defense();
                 break;
         }
     }

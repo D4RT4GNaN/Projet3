@@ -27,6 +27,7 @@ public class SearchMoreOrLessCore {
 
     /**
      * Challenger mode : The player try to found the secret code created by the computer
+     * @param dev if true : allow developer mode
      */
     public void challenger (boolean dev) {
         boolean endGame;
@@ -53,6 +54,7 @@ public class SearchMoreOrLessCore {
 
     /**
      * Dual mode : The player and the computer try to found the same secret code
+     * @param dev if true : allow developer mode
      */
     public void dual (boolean dev) {
         if (dev)

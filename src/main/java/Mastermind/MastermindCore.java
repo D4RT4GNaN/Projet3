@@ -14,14 +14,23 @@ public class MastermindCore {
     private int secretCombinationLength;
     private int maxTries;
 
-    private Scanner sc = new Scanner(System.in);
+    private int[] secretCombination;
 
-    public MastermindCore (int secretCombinationLength, int maxTries) {
+    private Scanner sc = new Scanner(System.in);
+    private Logger logger;
+
+    public MastermindCore (int[] secretCombination, int secretCombinationLength, int maxTries, Logger logger) {
+        this.secretCombination = secretCombination;
         this.secretCombinationLength = secretCombinationLength;
         this.maxTries = maxTries;
+        this.logger = logger;
     }
 
-    public void challenger (int[] secretCombination, boolean dev, Logger logger) {
+    /**
+     * Challenger mode : The player try to found the secret code created by the computer
+     * @param dev if true : allow developer mode
+     */
+    public void challenger (boolean dev) {
         int loop = 0;
 
         if (dev)
@@ -37,7 +46,12 @@ public class MastermindCore {
         }
     }
 
-    public void dual (int[] secretCombination, boolean dev, Logger logger) {
+
+    /**
+     * Dual mode : The player and the computer try to found the secret code of the other
+     * @param dev if true : allow developer mode
+     */
+    public void dual (boolean dev) {
         int loop = 0;
 
         ComputerMastermind computer = new ComputerMastermind();
@@ -57,12 +71,12 @@ public class MastermindCore {
             loop++;
             System.out.print("\nJoueur : ");
             int[] playerProposal = askPlayer();
-            if(endGame(playerProposal, secretCombination, logger, loop, "Joueur"))
+            if(endGame(playerProposal, secretCombination, loop, "Joueur"))
                 break;
 
             System.out.print("\nOrdinateur : ");
             computerProposal = computer.computerProcessing(computerProposal, Utils.intArrayToObject(goodNumberComputer, presentComputer));
-            if(endGame(computerProposal, secretCombinationDual, logger, loop, "Ordinateur"))
+            if(endGame(computerProposal, secretCombinationDual, loop, "Ordinateur"))
                 break;
 
             presentComputer = present;
@@ -70,7 +84,16 @@ public class MastermindCore {
         }
     }
 
-    private boolean endGame (int[] proposal, int[] secretCode, Logger logger, int loop, String player) {
+    /**
+     * Display the end game sentence and break the game
+     * if the player or the computer found the secret code of the other
+     * @param proposal The proposal of the player or the proposal of the computer
+     * @param secretCode The secret code of the player or the secret code of the computer
+     * @param loop the number of attempts
+     * @param player Player or Computer
+     * @return True if the player or the computer found the secret code of the other
+     */
+    private boolean endGame (int[] proposal, int[] secretCode, int loop, String player) {
         if (compareResponse(proposal, secretCode)) {
             logger.info("" + player + " win in " + loop + " move(s)");
             System.out.println("" + player + " WIN");
@@ -79,7 +102,10 @@ public class MastermindCore {
         return false;
     }
 
-    public void defense (Logger logger) {
+    /**
+     * Defense mode : computer try to found your secret code
+     */
+    public void defense () {
         ComputerMastermind computer = new ComputerMastermind();
         int[] computerProposal = new int[secretCombinationLength];
         present = -1;
