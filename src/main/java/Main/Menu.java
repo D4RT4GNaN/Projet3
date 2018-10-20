@@ -1,8 +1,10 @@
 package Main;
 
+import ErrorHandler.ErrorHandler;
 import Mastermind.Mastermind;
 import SearchMoreOrLess.SearchMoreOrLess;
 import ProjetMentor.MoreOrLess;
+import Utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,17 +29,9 @@ class Menu {
         System.out.println("0 - Quitter");
         do {
             game = sc.next();
-            if (!game.equals("1") && !game.equals("2") && !game.equals("3") && !game.equals("0")) {
-                System.err.println("Choisissez un des chiffres de la liste !");
-                logger.warn("Bad input numbers : numbers must be in list");
-            }
-            if (game.equals("0")) {
-                System.out.println("Thank's For Playing !!");
-                logger.info("Stopping program");
-                System.exit(0);
-            }
+            exitProgram(game);
         }
-        while (!(utils.isNumber(game) && (game.equals("1") || game.equals("2") || game.equals("3") || game.equals("0"))));
+        while (!selectNumber(game, "0123"));
 
         System.out.println("\nChoisissez votre mode jeu :");
         System.out.println("1 - Challenger");
@@ -48,17 +42,13 @@ class Menu {
             String entryUser = sc.nextLine();
             String[] paramUser = entryUser.split(" ");
             mode = paramUser[0];
-            dev = utils.hasDevMode(paramUser);
-            if (!mode.contains("1") && !mode.contains("2") && !mode.contains("3")) {
-                System.err.println("Choisissez un des chiffres de la liste !");
-                logger.warn("Bad input numbers : numbers must be in list");
-            }
-        } while (!(utils.isNumber(mode) && (mode.contains("1") || mode.contains("2") || mode.contains("3"))));
+            dev = Utils.hasDevMode(paramUser);
+        } while (!selectNumber(mode, "123"));
 
     }
 
     /**
-     * Asking player to replay the same game
+     * Asking player to replay the same game, change game or exit program
      */
     private boolean askReplay() {
         String choice;
@@ -69,16 +59,8 @@ class Menu {
         System.out.println("0 - Quitter");
         do {
             choice = sc.next();
-            if (!choice.equals("1") && !choice.equals("2") && !choice.equals("0")) {
-                System.err.println("Choisissez un des chiffres de la liste !");
-                logger.warn("Bad input numbers : numbers must be in list");
-            }
-            if (choice.equals("0")) {
-                System.out.println("\nThank's For Playing !!");
-                logger.info("Stopping program");
-                System.exit(0);
-            }
-        } while (!(utils.isNumber(choice) && (choice.equals("1") || choice.equals("2") || choice.equals("0"))));
+            exitProgram(choice);
+        } while (!selectNumber(choice, "012"));
         switch (choice) {
             case "1":
                 return true;
@@ -95,8 +77,8 @@ class Menu {
         System.out.println("Bienvenue sur le multi jeux");
         while (true) {
             askGame();
-            System.out.println();
             int gameInt = Integer.parseInt(game);
+            int intMode = Integer.parseInt(mode);
             do {
                 switch (gameInt) {
                     case 1:
@@ -104,18 +86,47 @@ class Menu {
                         new MoreOrLess();
                         break;
                     case 2:
-                        int intMode = Integer.parseInt(mode);
                         logger.info("Search more or less game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
                         new SearchMoreOrLess(intMode, dev);
                         break;
                     case 3:
-                        intMode = Integer.parseInt(mode);
                         logger.info("Mastermind game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
                         new Mastermind(intMode, dev);
                         break;
                 }
             } while (askReplay());
         }
+    }
+
+    /**
+     * Stop the program when the player enter 0
+     * @param input The player input
+     */
+    private void exitProgram (String input) {
+        if (input.equals("0")) {
+            System.out.println("Thank's For Playing !!");
+            logger.info("Stopping program");
+            System.exit(0);
+        }
+    }
+
+    /**
+     * Check if the player input is a number and if it contain in the list of possibility
+     * @param input The player input
+     * @param availableInput The available input
+     * @return True if the player input is a number contained in the available input list
+     */
+    private boolean selectNumber (String input, String availableInput) {
+        int availableInputLength = availableInput.length();
+        boolean inputIsValid = false;
+        for (int i = 0; i < availableInputLength; i++) {
+            if (input.equals("" + availableInput.charAt(i)))
+                inputIsValid = true;
+        }
+        if(!inputIsValid)
+            ErrorHandler.badInputNumbersError(logger);
+
+        return Utils.isNumber(input) && inputIsValid;
     }
 
 }

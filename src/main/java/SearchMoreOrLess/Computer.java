@@ -1,6 +1,6 @@
 package SearchMoreOrLess;
 
-import Main.utils;
+import Utils.Utils;
 
 public class Computer {
     private int[] min;
@@ -16,7 +16,7 @@ public class Computer {
      * @param gameName The name of the game
      */
     public void init (String gameName) {
-        int secretCodeLength = utils.getSecretCodeLength(gameName);
+        int secretCodeLength = Utils.getSecretCodeLength(gameName);
         computerProposal = new int[secretCodeLength];
         min = new int[secretCodeLength];
         max = new int[secretCodeLength];
@@ -53,7 +53,7 @@ public class Computer {
         updateLimit(playerProposal, playerPattern);
         String[] splitedPlayerPattern = playerPattern.split("");
 
-        for (int i = 0; i < utils.getSecretCodeLength("SearchMoreOrLess"); i++) {
+        for (int i = 0; i < Utils.getSecretCodeLength("SearchMoreOrLess"); i++) {
             if (splitedPlayerPattern[i].equals("="))
                 computerProposal[i] = playerProposal[i];
             else

@@ -1,6 +1,6 @@
 package Mastermind;
 
-import Main.utils;
+import Utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,9 +19,9 @@ public class Mastermind {
     private int[] secretCombination;
 
     private void init () {
-        maxTries = utils.getMaxTries("Mastermind");
-        secretCombinationLength = utils.getSecretCodeLength("Mastermind");
-        secretCombination = utils.randomCombination(secretCombinationLength);
+        maxTries = Utils.getMaxTries("Mastermind");
+        secretCombinationLength = Utils.getSecretCodeLength("Mastermind");
+        secretCombination = Utils.randomCombination(secretCombinationLength);
         logger.info("Creating the secret code");
     }
 
@@ -29,7 +29,7 @@ public class Mastermind {
         init();
         int loop;
         if (dev)
-            System.out.println("(Combinaison secrète : " + utils.combinationToString(secretCombination) + ")");
+            System.out.println("(Combinaison secrète : " + Utils.combinationToString(secretCombination) + ")");
         switch (mode) {
             case 1: // Challenger
                 loop = 0;
@@ -82,14 +82,14 @@ public class Mastermind {
 
                 System.out.println("Entrez une combinaison secrète !");
                 secretCombination = askPlayer();
-                logger.info("Player set the secret code to " + utils.combinationToString(secretCombination));
+                logger.info("Player set the secret code to " + Utils.combinationToString(secretCombination));
 
                 while (true) {
                     computerProposal = computer.computerProcessing(computerProposal, present, goodNumber);
                     loop++;
                     if (compareResponse(computerProposal, secretCombination) || loop == maxTries) {
                         if (loop == maxTries) {
-                            System.out.println("Perdu le bon chiffre était : " + utils.combinationToString(secretCombination));
+                            System.out.println("Perdu le bon chiffre était : " + Utils.combinationToString(secretCombination));
                             break;
                         }
                         logger.info("Computer found the secret code in " + loop + " move(s)");
@@ -112,8 +112,8 @@ public class Mastermind {
         do {
             System.out.println("Donnez un nombre de " + secretCombinationLength + " chiffres :");
             scanner = sc.next();
-        } while (!(utils.isNumber(scanner) && utils.hasSameLength(scanner, "Mastermind")));
-        playerProposal = utils.stringToCombination(scanner);
+        } while (!(Utils.isNumber(scanner) && Utils.hasSameLength(scanner, "Mastermind")));
+        playerProposal = Utils.stringToCombination(scanner);
 
         return playerProposal;
     }
@@ -129,11 +129,11 @@ public class Mastermind {
         int proposalLength = proposal.length;
         present = 0;
         goodNumber = 0;
-        String outDisplay = "Proposition : " + utils.combinationToString(proposal) + " -> Réponse : ";
+        String outDisplay = "Proposition : " + Utils.combinationToString(proposal) + " -> Réponse : ";
         int[] secretCombinationTemp = secretCombination.clone();
 
         for (int i = 0; i < proposalLength; i++) {
-            if (utils.tableContains(secretCombination, proposal[i])) {
+            if (Utils.tableContains(secretCombination, proposal[i])) {
                 if (secretCombination[i] == proposal[i]) {
                     goodNumber++;
                     secretCombinationTemp[i] = -1;
@@ -143,12 +143,12 @@ public class Mastermind {
 
         List<Integer> listTemp = new ArrayList<>();
         for (int item : proposal) {
-            if (utils.tableContains(secretCombinationTemp,item) && !(listTemp.contains(item)))
+            if (Utils.tableContains(secretCombinationTemp,item) && !(listTemp.contains(item)))
                 listTemp.add(item);
         }
 
         for (int item : listTemp)
-            present += utils.countOccurrences(secretCombinationTemp, item);
+            present += Utils.countOccurrences(secretCombinationTemp, item);
 
         if (present != 0 && goodNumber != 0) {
             outDisplay += present + " présent(s)" + ", " + goodNumber + " bien placé(s)";

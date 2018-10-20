@@ -1,17 +1,16 @@
-package Main;
+package Utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class utils {
+public class Utils {
 
-    private static Logger logger = LogManager.getLogger("main.java.Main.utils");
+    private static Logger logger = LogManager.getLogger("main.java.Utils.Utils");
 
     /**
      * Return a random int between min value and max value
@@ -104,51 +103,6 @@ public class utils {
             combinationTable[i] = Integer.parseInt("" + randomCombination.charAt(i));
 
         return combinationTable;
-    }
-
-    /**
-     * Convert the secret code from table to Color cast
-     * @param randomCombination The table of the secret code
-     * @return The secret code casted into Color
-     */
-    public static Color[] combinationToColor (int[] randomCombination) {
-        int combinationLength = randomCombination.length;
-        Color[] combinationColor = new Color[combinationLength];
-        for (int i = 0; i < combinationLength; i++) {
-            switch (i) {
-                case 0:
-                    combinationColor[i] = Color.GRAY;
-                    break;
-                case 1:
-                    combinationColor[i] = Color.BLUE;
-                    break;
-                case 2:
-                    combinationColor[i] = Color.RED;
-                    break;
-                case 3:
-                    combinationColor[i] = Color.GREEN;
-                    break;
-                case 4:
-                    combinationColor[i] = Color.YELLOW;
-                    break;
-                case 5:
-                    combinationColor[i] = Color.PINK;
-                    break;
-                case 6:
-                    combinationColor[i] = Color.MAGENTA;
-                    break;
-                case 7:
-                    combinationColor[i] = Color.ORANGE;
-                    break;
-                case 8:
-                    combinationColor[i] = Color.CYAN;
-                    break;
-                case 9:
-                    combinationColor[i] = Color.DARK_GRAY;
-                    break;
-            }
-        }
-        return combinationColor;
     }
 
     /**
@@ -274,7 +228,7 @@ public class utils {
      * @param paramUser the keyword for the developer mode
      * @return true if it's the correct keyword
      */
-    static boolean hasDevMode(String[] paramUser) {
+    public static boolean hasDevMode(String[] paramUser) {
         return paramUser.length == 2 && paramUser[1].equals("dev");
     }
 

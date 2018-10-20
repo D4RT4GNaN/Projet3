@@ -1,6 +1,6 @@
 package Mastermind;
 
-import Main.utils;
+import Utils.Utils;
 
 import java.util.*;
 
@@ -29,16 +29,16 @@ class Computer {
         int[] computerProposal = proposal;
         int[] pattern = new int[] {goodNumber,present};
 
-        if (goodNumber != 0 && sureNumber.size() < (utils.getSecretCodeLength("Mastermind"))) {
+        if (goodNumber != 0 && sureNumber.size() < (Utils.getSecretCodeLength("Mastermind"))) {
             for (int i = 0; i < goodNumber; i++) {
                 sureNumber.add(computerProposal[0]);
             }
         }
 
-        if (sureNumber.size() < (utils.getSecretCodeLength("Mastermind"))) {
+        if (sureNumber.size() < (Utils.getSecretCodeLength("Mastermind"))) {
             if (present != -1) {
                 int newValue = computerProposal[0] + 1;
-                for (int i = 0; i < utils.getSecretCodeLength("Mastermind"); i++) {
+                for (int i = 0; i < Utils.getSecretCodeLength("Mastermind"); i++) {
                     computerProposal[i] = newValue;
                 }
             }
@@ -64,7 +64,7 @@ class Computer {
             population = initPopulation(numberAvailable, 100);
             loop++;
         } else {
-            computerProposal = utils.stringToCombination(this.fitness(computerProposal, (HashSet<String>)population, pattern));
+            computerProposal = Utils.stringToCombination(this.fitness(computerProposal, (HashSet<String>)population, pattern));
             if (population.size() == 1 && pattern[0] != numberAvailable.size())
                 population = initPopulation(numberAvailable, 100);
         }
@@ -93,7 +93,7 @@ class Computer {
         int numberRepeatColors = listTemp2.size();
 
         while (population.size() < popSize) {
-            if (population.size() != utils.numberPossibleCombination(numberAvailable.size(),numberDifferentColors,numberRepeatColors)) {
+            if (population.size() != Utils.numberPossibleCombination(numberAvailable.size(),numberDifferentColors,numberRepeatColors)) {
                 Collections.shuffle(numberAvailable);
                 StringBuilder individual = new StringBuilder();
                 for (Object obj : numberAvailable)
@@ -120,12 +120,12 @@ class Computer {
         Set populationBuffer = new HashSet<>(population);
         Map<Integer, String> minimum = new HashMap<>();
         for (Object individual : population) {
-            if (!compare(computerProposal, utils.stringToCombination((String)individual), pattern)) {
+            if (!compare(computerProposal, Utils.stringToCombination((String)individual), pattern)) {
                 delList.add(individual);
             }
         }
 
-        minimum.put(delList.size(), utils.combinationToString(computerProposal));
+        minimum.put(delList.size(), Utils.combinationToString(computerProposal));
 
         for (Object del : delList)
             population.remove(del.toString());
@@ -133,7 +133,7 @@ class Computer {
         for (Object individual : population) {
             delList = new ArrayList<>();
             for (Object oldIndividual : populationBuffer) {
-                if (!compare(utils.stringToCombination((String)individual), utils.stringToCombination((String)oldIndividual), pattern)) {
+                if (!compare(Utils.stringToCombination((String)individual), Utils.stringToCombination((String)oldIndividual), pattern)) {
                     delList.add(oldIndividual);
                 }
             }
@@ -165,7 +165,7 @@ class Computer {
         boolean isSame;
 
         for (int i = 0; i < proposal.length; i++) {
-            if (utils.tableContains(proposal, individual[i])) {
+            if (Utils.tableContains(proposal, individual[i])) {
                 if (proposal[i] == individual[i]) {
                     individualBlackPins++;
                     proposalTemp[i] = -1;
@@ -175,12 +175,12 @@ class Computer {
 
         List<Integer> listTemp = new ArrayList<>();
         for (int item : individual) {
-            if (utils.tableContains(proposalTemp,item) && !(listTemp.contains(item)))
+            if (Utils.tableContains(proposalTemp,item) && !(listTemp.contains(item)))
                 listTemp.add(item);
         }
 
         for (int item : listTemp)
-            individualWhitePins += utils.countOccurrences(proposalTemp, item);
+            individualWhitePins += Utils.countOccurrences(proposalTemp, item);
 
         isSame = pattern[0] == individualBlackPins && pattern[1] == individualWhitePins;
 
