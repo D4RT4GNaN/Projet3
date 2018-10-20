@@ -8,13 +8,15 @@ public class ComputerSearchMoreOrLess extends Computer {
     private int[] max;
     private int[] computerProposal;
 
+    private int secretCodeLength;
+
     public ComputerSearchMoreOrLess() {
         init();
     }
 
     @Override
     protected void init () {
-        int secretCodeLength = Utils.getSecretCodeLength("SearchMoreOrLess");
+        secretCodeLength = Utils.getSecretCodeLength("SearchMoreOrLess");
         computerProposal = new int[secretCodeLength];
         min = new int[secretCodeLength];
         max = new int[secretCodeLength];
@@ -30,13 +32,13 @@ public class ComputerSearchMoreOrLess extends Computer {
      * @param playerPattern The pattern returned by the program and based on the player's proposal
      */
     public void updateLimit (int[] playerProposal, String playerPattern) {
-        String[] splitedPlayerPattern = playerPattern.split("");
-        for (int i = 0; i < splitedPlayerPattern.length; i++) {
-            if (splitedPlayerPattern[i].equals("+") && min[i] < playerProposal[i])
+        String[] splicedPlayerPattern = playerPattern.split("");
+        for (int i = 0; i < splicedPlayerPattern.length; i++) {
+            if (splicedPlayerPattern[i].equals("+") && min[i] < playerProposal[i])
                 min[i] = playerProposal[i];
-            else if (splitedPlayerPattern[i].equals("-")  && max[i] > playerProposal[i])
+            else if (splicedPlayerPattern[i].equals("-")  && max[i] > playerProposal[i])
                 max[i] = playerProposal[i];
-            else if (splitedPlayerPattern[i].equals("="))
+            else if (splicedPlayerPattern[i].equals("="))
                 computerProposal[i] = playerProposal[i];
         }
     }
@@ -53,7 +55,7 @@ public class ComputerSearchMoreOrLess extends Computer {
         updateLimit(playerProposal, pattern);
         String[] splicedPlayerPattern = pattern.split("");
 
-        for (int i = 0; i < Utils.getSecretCodeLength("SearchMoreOrLess"); i++) {
+        for (int i = 0; i < secretCodeLength; i++) {
             if (splicedPlayerPattern[i].equals("="))
                 computerProposal[i] = playerProposal[i];
             else
