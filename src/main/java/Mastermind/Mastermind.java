@@ -25,7 +25,7 @@ public class Mastermind extends Game {
         logger = LogManager.getLogger("main.java.Mastermind.Mastermind");
         int maxTries = Utils.getMaxTries("Mastermind");
         int secretCombinationLength = Utils.getSecretCodeLength("Mastermind");
-        mastermind = new MastermindCore(secretCombinationLength, maxTries);
+        mastermind = new MastermindCore(secretCombination, secretCombinationLength, maxTries, logger);
         secretCombination = Utils.randomCombination(secretCombinationLength);
         logger.info("Creating the secret code");
     }
