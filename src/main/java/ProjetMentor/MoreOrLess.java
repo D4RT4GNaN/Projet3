@@ -1,113 +1,43 @@
 package ProjetMentor;
 
+import Mastermind.utilsMastermind;
+import Utils.Game;
+import Utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.Scanner;
+public class MoreOrLess extends Game {
 
-public class MoreOrLess {
+    private MoreOrLessCore moreOrLess;
 
-    Properties properties = new Properties();
-    private Logger logger = LogManager.getLogger("main.java.MoreOrLess.MoreOrLess");
-
-    public MoreOrLess (boolean developMode) {
-        runMoreOrLess(developMode);
+    public MoreOrLess (int mode, boolean dev) {
+        init();
+        runGame(mode, dev);
     }
 
-    public MoreOrLess () {
-        runMoreOrLess(false);
+    @Override
+    protected void init () {
+        Logger logger = LogManager.getLogger("main.java.MoreOrLess.MoreOrLess");
+        int triesMax = Utils.getMaxTries("MoreOrLess");
+        int secretNumberLength = Utils.getSecretCodeLength("MoreOrLess");
+        int secretNumber = Utils.combinationToInt(Utils.randomCombination(secretNumberLength, 9));
+        moreOrLess = new MoreOrLessCore(secretNumber, secretNumberLength, logger, triesMax);
     }
 
-    /**
-     * Create a random number
-     * @return the secret number
-     */
-    public int randomSecretCombination () {
-        try {
-            logger.info("Reading config file");
-            FileInputStream config = new FileInputStream("src/main/resources/config.properties");
-            properties.load(config);
-            config.close();
-        } catch (FileNotFoundException e) {
-            logger.error(e);
-            System.out.println("Le fichier n'existe pas !");
-        } catch (IOException e) {
-            logger.error(e);
-            System.out.println("Impossible de lire ou d'écrire dans le fichier.");
+    @Override
+    protected void runGame (int mode, boolean dev) {
+        switch (mode) {
+            case 1: // Challenger
+                moreOrLess.challenger(dev);
+                break;
+
+            case 2: // Dual
+                moreOrLess.dual(dev);
+                break;
+
+            case 3: // Defense
+                moreOrLess.defense();
+                break;
         }
-        logger.info("Recovered the length of the secret code");
-        int caseNumber = Integer.parseInt(properties.getProperty("number-case-MoreOrLess"));
-        int [] digitSecretCombination = new int [caseNumber];
-        int secretCombination;
-        String stringSecretCombination = "";
-
-        for (int i = 0; i < caseNumber; i++) {
-            if (i == 0)
-                digitSecretCombination[i] = 1 + (int)(Math.random() * 9);
-            else
-                digitSecretCombination[i] = (int) (Math.random() * 10);
-            stringSecretCombination = stringSecretCombination + digitSecretCombination[i];
-        }
-        secretCombination = Integer.parseInt(stringSecretCombination);
-        logger.info("Creating and set the secret code to " + secretCombination);
-        return secretCombination;
-    }
-
-    /**
-     * Asks the user to enter a number
-     * @return the number entered by the user
-     */
-    public int askNumber () {
-        System.out.print("Donnez un chiffre : ");
-        Scanner sc = new Scanner(System.in);
-        int userNumber = sc.nextInt();
-        return userNumber;
-    }
-
-    /**
-     *Compare the number entered by the user and the secret number and display if it's more, less or equal
-     * @param userNumber the number entered by the user
-     * @param secretNumber the secret random number
-     * @return boolean meaning the end of game or not
-     */
-    public boolean compareNumber (int userNumber, int secretNumber, int lapCounter, int triesMax) {
-        boolean endGame = false;
-        if (lapCounter == triesMax) {
-            System.out.println("Perdu!! le nombre secret était " + secretNumber);
-            endGame = true;
-        } else if (userNumber == secretNumber) {
-            System.out.println("Bravo! Vous avez trouvez le nombre secret en seulement " + lapCounter + " tours");
-            endGame = true;
-        } else if (userNumber < secretNumber)
-            System.out.println("C'est plus");
-        else
-            System.out.println("C'est moins");
-        return endGame;
-    }
-
-    /**
-     *Run asking process for one secret number
-     */
-    public void runMoreOrLess (boolean developMode) {
-        int secretNumber = randomSecretCombination();
-        int lapCounter = 0;
-        int triesMax = Integer.parseInt(properties.getProperty("number-tries-MoreOrLess"));
-        System.out.println("Bienvenue sur le jeu du plus ou moins");
-        if (developMode)
-            System.out.println("nombre secret : " + secretNumber);
-        logger.info("Recovered the number of maximum's tries in config file");
-        System.out.println("A vous de jouez (" + Integer.parseInt(properties.getProperty("number-case-MoreOrLess")) + ") :");
-        boolean endGame;
-        do {
-            lapCounter++;
-            int userNumber = askNumber();
-            endGame = compareNumber(userNumber, secretNumber, lapCounter, triesMax);
-            if (endGame)
-                logger.info("Player found the secret code in " + lapCounter + " move(s)");
-        } while (!endGame);
     }
 }

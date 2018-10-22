@@ -58,6 +58,23 @@ public class Utils {
     }
 
     /**
+     * Convert the secret code from table to int cast
+     * @param randomCombination The table of the secret code
+     * @return The secret code casted into int
+     */
+    public static int combinationToInt (int[] randomCombination) {
+        int combinationInt;
+        StringBuilder combinationTemp = new StringBuilder();
+
+        for (int i : randomCombination) {
+            combinationTemp.append(Integer.toString(i));
+        }
+        combinationInt = Integer.parseInt(combinationTemp.toString());
+
+        return combinationInt;
+    }
+
+    /**
      * Load the config file
      * @return properties contained in the config file
      */

@@ -87,8 +87,8 @@ class Menu {
             do {
                 switch (gameInt) {
                     case 1:
-                        logger.info("More or less game started");
-                        new MoreOrLess();
+                        logger.info("More or less game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
+                        new MoreOrLess(intMode, dev);
                         break;
                     case 2:
                         logger.info("Search more or less game started in " + (intMode == 1? "challenger mode" : intMode == 2? "dual mode" : "defense mode") + (dev? " and developer mode" : ""));
