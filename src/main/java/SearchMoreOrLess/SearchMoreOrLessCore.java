@@ -2,8 +2,6 @@ package SearchMoreOrLess;
 
 import org.apache.logging.log4j.Logger;
 
-import Utils.Utils;
-
 import java.util.Scanner;
 
 public class SearchMoreOrLessCore {
@@ -34,21 +32,21 @@ public class SearchMoreOrLessCore {
         int numberTries = 0;
 
         if (dev)
-            System.out.println("Combinaison secrète : " + Utils.combinationToInt(secretCombination));
+            System.out.println("Combinaison secrète : " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
 
         do {
             int[] playerProposal = askPlayer();
             endGame = compareResponse(playerProposal);
             numberTries++;
             if (numberTries == numberTriesMax) {
-                logger.info("Player don't found the secret code that was " + Utils.combinationToInt(secretCombination));
-                System.out.println("Désolé c'est perdu ! Le nombre secret était : " + Utils.combinationToInt(secretCombination));
+                logger.info("Player don't found the secret code that was " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
+                System.out.println("Désolé c'est perdu ! Le nombre secret était : " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
                 break;
             }
         } while (!endGame);
         if (endGame) {
             logger.info("Player found the secret code in " + numberTries + " move(s)");
-            System.out.println("Bravo !!! Le nombre secret était bien : " + Utils.combinationToInt(secretCombination));
+            System.out.println("Bravo !!! Le nombre secret était bien : " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
         }
     }
 
@@ -58,7 +56,7 @@ public class SearchMoreOrLessCore {
      */
     public void dual (boolean dev) {
         if (dev)
-            System.out.println("Combinaison secrète : " + Utils.combinationToInt(secretCombination));
+            System.out.println("Combinaison secrète : " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
 
         int numberTries = 0;
 
@@ -87,7 +85,7 @@ public class SearchMoreOrLessCore {
     private boolean endGame (int[] proposal, int numberTries, String player) {
         if (compareResponse(proposal)) {
             logger.info("" + player + " win and found the secret code in " + numberTries + " move(s)");
-            System.out.println("Yahah !!! J'ai gagné en " + numberTries + " coups, t'as perdu et le nombre secret était bien : " + Utils.combinationToInt(secretCombination));
+            System.out.println("Yahah !!! J'ai gagné en " + numberTries + " coups, t'as perdu et le nombre secret était bien : " + utilsSearchMoreOrLess.combinationToInt(secretCombination));
             return true;
         }
         return false;
@@ -101,7 +99,7 @@ public class SearchMoreOrLessCore {
         int computerLoop = 0;
 
         int[] secretCombination = askPlayer();
-        logger.info("Player set the secret code to " + Utils.combinationToString(secretCombination));
+        logger.info("Player set the secret code to " + utilsSearchMoreOrLess.combinationToString(secretCombination));
 
         int[] computerProposal = null;
         logger.info("ComputerSearchMoreOrLess starting research");
@@ -124,9 +122,9 @@ public class SearchMoreOrLessCore {
         do {
             System.out.println("Donnez un nombre de " + secretCodeLength + " chiffres :");
             scanner = sc.next();
-        } while (!(Utils.isNumber(scanner) && Utils.hasSameLength(scanner, "SearchMoreOrLess")));
+        } while (!(utilsSearchMoreOrLess.isNumber(scanner) && utilsSearchMoreOrLess.hasSameLength(scanner, "SearchMoreOrLess")));
 
-        return Utils.intToCombination(Integer.parseInt(scanner));
+        return utilsSearchMoreOrLess.intToCombination(Integer.parseInt(scanner));
     }
 
     /**
@@ -138,7 +136,7 @@ public class SearchMoreOrLessCore {
     private boolean compareResponse (int[] proposal) {
         int proposalLength = proposal.length;
         int goodNumber = 0;
-        StringBuilder outDisplay = new StringBuilder("Proposition : " + Utils.combinationToInt(proposal) + " -> Réponse : ");
+        StringBuilder outDisplay = new StringBuilder("Proposition : " + utilsSearchMoreOrLess.combinationToInt(proposal) + " -> Réponse : ");
         pattern = "";
 
         for (int i = 0; i < proposalLength; i++) {

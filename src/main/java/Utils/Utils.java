@@ -43,23 +43,6 @@ public class Utils {
     }
 
     /**
-     * Convert the secret code from table to int cast
-     * @param randomCombination The table of the secret code
-     * @return The secret code casted into int
-     */
-    public static int combinationToInt (int[] randomCombination) {
-        int combinationInt;
-        StringBuilder combinationTemp = new StringBuilder();
-
-        for (int i : randomCombination) {
-            combinationTemp.append(Integer.toString(i));
-        }
-        combinationInt = Integer.parseInt(combinationTemp.toString());
-
-        return combinationInt;
-    }
-
-    /**
      * Convert the secret code from table to String cast
      * @param randomCombination The table of the secret code
      * @return The secret code casted into String
@@ -75,36 +58,9 @@ public class Utils {
     }
 
     /**
-     * Convert the secret code from int to table of int
-     * @param randomCombination The int value of the secret code
-     * @return The secret code splited into table of int
+     * Load the config file
+     * @return properties contained in the config file
      */
-    public static int[] intToCombination (int randomCombination) {
-        String temp = "" + randomCombination;
-        int tempLength = temp.length();
-        int[] combinationTable = new int[tempLength];
-
-        for (int i = 0; i < tempLength; i++)
-            combinationTable[i] = Integer.parseInt("" + temp.charAt(i));
-
-        return combinationTable;
-    }
-
-    /**
-     * Convert the secret code from string to table of int
-     * @param randomCombination The string value of the secret code
-     * @return The secret code splited into table of int
-     */
-    public static int[] stringToCombination (String randomCombination) {
-        int randomCombinationLength = randomCombination.length();
-        int[] combinationTable = new int[randomCombinationLength];
-
-        for (int i = 0; i < randomCombinationLength; i++)
-            combinationTable[i] = Integer.parseInt("" + randomCombination.charAt(i));
-
-        return combinationTable;
-    }
-
     private static Properties loadConfigFile () {
         Properties properties = new Properties();
 
@@ -150,12 +106,12 @@ public class Utils {
 
     /**
      * Check if the string in parameter contain an int
-     * @param string The text proposed by the player
+     * @param proposal The text proposed by the player
      * @return True if it's a number, False if it's something else
      */
-    public static boolean isNumber (String string) {
+    public static boolean isNumber (String proposal) {
         try {
-            Integer.parseInt(string);
+            Integer.parseInt(proposal);
             return true;
         } catch (NumberFormatException e) {
             logger.warn("Only numbers are accepted");
@@ -166,48 +122,19 @@ public class Utils {
 
     /**
      * Check if the string in parameter have the same length with the secret code
-     * @param string The text proposed by the player
+     * @param proposal The proposal of the player
+     * @param game The name of the game
      * @return True if it have the same length
      */
-    public static boolean hasSameLength (String string, String game) {
+    public static boolean hasSameLength (String proposal, String game) {
         int secretCodeLength = getSecretCodeLength(game);
-        if (string.length() == secretCodeLength)
+        if (proposal.length() == secretCodeLength)
             return true;
         else {
             logger.warn("Input length different from that expected (" + secretCodeLength + ")");
             System.err.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
             return false;
         }
-    }
-
-    /**
-     * Search if value is in table
-     * @param table the table where it search the value
-     * @param value the desired value
-     * @return true if value is in table
-     */
-    public static boolean tableContains (int[] table, int value) {
-        for (int i : table) {
-            if (i == value)
-                return true;
-        }
-        return false;
-    }
-
-    /**
-     * Count the occurrence of one value in the table
-     * @param table the table where it search all occurrences of the value
-     * @param value the value whose occurrences we are looking for
-     * @return the number of occurrences of the value
-     */
-    public static int countOccurrences(int[] table, int value){
-        int count = 0;
-        for (int i : table) {
-            if (i == value) {
-                count++;
-            }
-        }
-        return count;
     }
 
     /**
@@ -219,43 +146,7 @@ public class Utils {
         Properties properties = loadConfigFile();
         if (Boolean.parseBoolean(properties.getProperty("developer-mode")))
             return true;
-        else if (paramUser.length == 2 && paramUser[1].equals("dev"))
-            return true;
         else
-            return false;
-    }
-
-    /**
-     * Calculate the factorial for obtain the number of possibility
-     * @param n The number of case
-     * @return The number of possibility
-     */
-    private static int factorial(int n) {
-        int factorial = 1;
-        for(int i = 0; i < n; i++) {
-            factorial *= (n - i);
-        }
-        return factorial;
-    }
-
-    /**
-     * Calculate the number of possible combinations
-     * @param n The size of the combination
-     * @param k The number of different colors in the combination
-     * @param j The number of repeated numbers
-     * @return The number of possible combination
-     */
-    public static int numberPossibleCombination (int n, int k, int j) {
-        int numberPossibleCombination;
-        if ((j*factorial(n-k)) != 0)
-            numberPossibleCombination = (factorial(n)/(j*factorial(n-k)));
-        else
-            numberPossibleCombination = factorial(n);
-
-        return numberPossibleCombination;
-    }
-
-    public static Object intArrayToObject (int goodNumber, int present) {
-        return new int[]{goodNumber, present};
+            return paramUser.length == 2 && paramUser[1].equals("dev");
     }
 }

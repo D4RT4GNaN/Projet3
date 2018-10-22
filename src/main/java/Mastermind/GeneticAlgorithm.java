@@ -22,7 +22,7 @@ public class GeneticAlgorithm {
             }
             population = initPopulation(numberAvailable, 100);
         } else {
-            computerProposal = Utils.stringToCombination(fitness(computerProposal, population, pattern));
+            computerProposal = utilsMastermind.stringToCombination(fitness(computerProposal, population, pattern));
             if (population.size() == 1 && pattern[0] != numberAvailable.size())
                 population = initPopulation(numberAvailable, 100);
         }
@@ -51,7 +51,7 @@ public class GeneticAlgorithm {
         int numberRepeatColors = listTemp2.size();
 
         while (population.size() < popSize) {
-            if (population.size() != Utils.numberPossibleCombination(numberAvailable.size(),numberDifferentColors,numberRepeatColors)) {
+            if (population.size() != utilsMastermind.numberPossibleCombination(numberAvailable.size(),numberDifferentColors,numberRepeatColors)) {
                 Collections.shuffle(numberAvailable);
                 StringBuilder individual = new StringBuilder();
                 for (Object obj : numberAvailable)
@@ -78,7 +78,7 @@ public class GeneticAlgorithm {
         Set populationBuffer = new HashSet<>(population);
         Map<Integer, String> minimum = new HashMap<>();
         for (Object individual : population) {
-            if (!compare(computerProposal, Utils.stringToCombination((String)individual), pattern)) {
+            if (!compare(computerProposal, utilsMastermind.stringToCombination((String)individual), pattern)) {
                 delList.add(individual);
             }
         }
@@ -91,7 +91,7 @@ public class GeneticAlgorithm {
         for (Object individual : population) {
             delList = new ArrayList<>();
             for (Object oldIndividual : populationBuffer) {
-                if (!compare(Utils.stringToCombination((String)individual), Utils.stringToCombination((String)oldIndividual), pattern)) {
+                if (!compare(utilsMastermind.stringToCombination((String)individual), utilsMastermind.stringToCombination((String)oldIndividual), pattern)) {
                     delList.add(oldIndividual);
                 }
             }
@@ -123,7 +123,7 @@ public class GeneticAlgorithm {
         boolean isSame;
 
         for (int i = 0; i < proposal.length; i++) {
-            if (Utils.tableContains(proposal, individual[i])) {
+            if (utilsMastermind.tableContains(proposal, individual[i])) {
                 if (proposal[i] == individual[i]) {
                     individualBlackPins++;
                     proposalTemp[i] = -1;
@@ -133,12 +133,12 @@ public class GeneticAlgorithm {
 
         List<Integer> listTemp = new ArrayList<>();
         for (int item : individual) {
-            if (Utils.tableContains(proposalTemp,item) && !(listTemp.contains(item)))
+            if (utilsMastermind.tableContains(proposalTemp,item) && !(listTemp.contains(item)))
                 listTemp.add(item);
         }
 
         for (int item : listTemp)
-            individualWhitePins += Utils.countOccurrences(proposalTemp, item);
+            individualWhitePins += utilsMastermind.countOccurrences(proposalTemp, item);
 
         isSame = pattern[0] == individualBlackPins && pattern[1] == individualWhitePins;
 
