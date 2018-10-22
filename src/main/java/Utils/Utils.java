@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class Utils {
 
-    private static Logger logger = LogManager.getLogger("main.java.Utils.Utils");
+    protected static Logger logger = LogManager.getLogger("main.java.Utils.Utils");
 
     /**
      * Return a random int between min value and max value
@@ -27,15 +27,15 @@ public class Utils {
      * @param combinationLength The size of the table
      * @return The table who contains the secret code
      */
-    public static int[] randomCombination(int combinationLength) {
+    public static int[] randomCombination(int combinationLength, int max) {
         int[] randomCombination = new int[combinationLength];
         for (int i = 0; i < combinationLength; i++) {
             switch (i) {
                 case 0:
-                    randomCombination[i] = randomInt(1, 9);
+                    randomCombination[i] = randomInt(1, max);
                     break;
                 default:
-                    randomCombination[i] = randomInt(0, 9);
+                    randomCombination[i] = randomInt(0, max);
                     break;
             }
         }
@@ -61,7 +61,7 @@ public class Utils {
      * Load the config file
      * @return properties contained in the config file
      */
-    private static Properties loadConfigFile () {
+    protected static Properties loadConfigFile () {
         Properties properties = new Properties();
 
         try {

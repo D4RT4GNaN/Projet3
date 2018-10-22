@@ -2,6 +2,8 @@ package Mastermind;
 
 import Utils.Utils;
 
+import java.util.Properties;
+
 public class utilsMastermind extends Utils {
     /**
      * Convert the secret code from string to table of int
@@ -86,5 +88,16 @@ public class utilsMastermind extends Utils {
             numberPossibleCombination = factorial(caseLength);
 
         return numberPossibleCombination;
+    }
+
+    /**
+     * Get the number of colours available for the secret code defined in the config file
+     * @return the number of colours available for the secret code
+     */
+    public static int getNumberColours () {
+        Properties properties = loadConfigFile();
+        logger.info("Recovered the number of colours available for the secret code");
+
+        return Integer.parseInt(properties.getProperty("number-colours-Mastermind"));
     }
 }

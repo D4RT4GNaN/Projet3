@@ -1,6 +1,5 @@
 package SearchMoreOrLess;
 
-import Utils.Utils;
 import Utils.Game;
 
 import org.apache.logging.log4j.LogManager;
@@ -23,9 +22,9 @@ public class SearchMoreOrLess extends Game{
      * Initialization method
      */
     protected void init () {
-        int numberTriesMax = Utils.getMaxTries("SearchMoreOrLess");
-        int secretCodeLength = Utils.getSecretCodeLength("SearchMoreOrLess");
-        int[] secretCombination = Utils.randomCombination(secretCodeLength);
+        int numberTriesMax = utilsSearchMoreOrLess.getMaxTries("SearchMoreOrLess");
+        int secretCodeLength = utilsSearchMoreOrLess.getSecretCodeLength("SearchMoreOrLess");
+        int[] secretCombination = utilsSearchMoreOrLess.randomCombination(secretCodeLength, 9);
         searchMoreOrLess = new SearchMoreOrLessCore(secretCodeLength, secretCombination, numberTriesMax, logger, pattern);
         for (int i = 0; i < secretCodeLength; i++)
             pattern += "*";

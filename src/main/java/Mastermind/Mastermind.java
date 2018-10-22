@@ -1,6 +1,6 @@
 package Mastermind;
 
-import Utils.Utils;
+//import Utils.Utils;
 import Utils.Game;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,10 +23,10 @@ public class Mastermind extends Game {
      */
     protected void init () {
         logger = LogManager.getLogger("main.java.Mastermind.Mastermind");
-        int maxTries = Utils.getMaxTries("Mastermind");
-        int secretCombinationLength = Utils.getSecretCodeLength("Mastermind");
+        int maxTries = utilsMastermind.getMaxTries("Mastermind");
+        int secretCombinationLength = utilsMastermind.getSecretCodeLength("Mastermind");
+        secretCombination = utilsMastermind.randomCombination(secretCombinationLength,utilsMastermind.getNumberColours());
         mastermind = new MastermindCore(secretCombination, secretCombinationLength, maxTries, logger);
-        secretCombination = Utils.randomCombination(secretCombinationLength);
         logger.info("Creating the secret code");
     }
 
