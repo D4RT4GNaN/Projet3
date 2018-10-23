@@ -45,7 +45,6 @@ public class MastermindCore {
         }
     }
 
-
     /**
      * Dual mode : The player and the computer try to found the secret code of the other
      * @param dev if true : allow developer mode

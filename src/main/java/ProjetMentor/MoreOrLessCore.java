@@ -21,6 +21,10 @@ public class MoreOrLessCore {
         this.pattern = pattern;
     }
 
+    /**
+     * Challenger mode : The player try to found the secret code created by the computer
+     * @param dev if true : allow developer mode
+     */
     public void challenger (boolean dev) {
         int lapCounter = 0;
         int userProposal;
@@ -41,6 +45,10 @@ public class MoreOrLessCore {
         }
     }
 
+    /**
+     * Dual mode : The player and the computer try to found the same secret code
+     * @param dev if true : allow developer mode
+     */
     public void dual (boolean dev) {
         System.out.println("Bienvenue sur le jeu du juste prix en mode duel !");
         if (dev)
@@ -52,19 +60,27 @@ public class MoreOrLessCore {
         while (true) {
             lapCounter++;
             int proposal = askNumber();
-            if (compareNumber(proposal, secretNumber, lapCounter))
+            if (compareNumber(proposal, secretNumber, lapCounter)) {
+                logger.info("Player found the secret code in " + lapCounter + " move(s)");
                 break;
+            }
 
             int[] computerProposal = computer.computerProcessing(Utils.intToCombination(proposal), pattern);
             System.out.println(Utils.combinationToInt(computerProposal));
-            if (compareNumber(Utils.combinationToInt(computerProposal), secretNumber, lapCounter))
+            if (compareNumber(Utils.combinationToInt(computerProposal), secretNumber, lapCounter)) {
+                logger.info("Computer found the secret code in " + lapCounter + " move(s)");
                 break;
+            }
         }
     }
 
+    /**
+     * Defense mode : computer try to found your secret code
+     */
     public void defense () {
         System.out.println("Bienvenue sur le jeu du juste prix en mode défenseur !");
         secretNumber = askNumber();
+        logger.info("The player set the secret code at " + secretNumber);
         ComputerMoreOrLess computer = new ComputerMoreOrLess(Utils.intToCombination(secretNumber).length);
         int[] proposal = new int[0];
         int lapCounter = 0;
@@ -73,8 +89,10 @@ public class MoreOrLessCore {
             lapCounter++;
             proposal = computer.computerProcessing(proposal, pattern);
             System.out.println(Utils.combinationToString(proposal));
-            if(compareNumber(Utils.combinationToInt(proposal), secretNumber, lapCounter))
+            if(compareNumber(Utils.combinationToInt(proposal), secretNumber, lapCounter)) {
+                logger.info("Computer found the secret code in " + lapCounter + " move(s)");
                 break;
+            }
         }
     }
 
@@ -97,6 +115,7 @@ public class MoreOrLessCore {
         boolean endGame = false;
         if (lapCounter == triesMax) {
             System.out.println("Perdu!! le nombre secret était " + secretNumber);
+            logger.info("Loose! the secret number was : " + secretNumber);
             endGame = true;
         } else if (userNumber == secretNumber) {
             System.out.println("Bravo! Vous avez trouvez le nombre secret en seulement " + lapCounter + " tours");
