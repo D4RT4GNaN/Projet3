@@ -21,7 +21,8 @@ public class MoreOrLess extends Game {
         int triesMax = Utils.getMaxTries("MoreOrLess");
         int secretNumberLength = Utils.getSecretCodeLength("MoreOrLess");
         int secretNumber = Utils.combinationToInt(Utils.randomCombination(secretNumberLength, 9));
-        moreOrLess = new MoreOrLessCore(secretNumber, secretNumberLength, logger, triesMax);
+        String pattern = "*";
+        moreOrLess = new MoreOrLessCore(secretNumber, secretNumberLength, logger, triesMax, pattern);
     }
 
     @Override
