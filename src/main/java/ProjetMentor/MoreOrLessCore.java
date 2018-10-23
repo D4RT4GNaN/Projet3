@@ -25,7 +25,7 @@ public class MoreOrLessCore {
         int lapCounter = 0;
         int userProposal;
 
-        System.out.println("Bienvenue sur le jeu du plus ou moins");
+        System.out.println("Bienvenue sur le jeu du juste prix en mode challenger !");
         if (dev)
             System.out.println("(nombre secret : " + secretNumber + ")");
 
@@ -42,10 +42,28 @@ public class MoreOrLessCore {
     }
 
     public void dual (boolean dev) {
+        System.out.println("Bienvenue sur le jeu du juste prix en mode duel !");
+        if (dev)
+            System.out.println("(nombre secret : " + secretNumber + ")");
 
+        int lapCounter = 0;
+        ComputerMoreOrLess computer = new ComputerMoreOrLess(secretNumberLength);
+
+        while (true) {
+            lapCounter++;
+            int proposal = askNumber();
+            if (compareNumber(proposal, secretNumber, lapCounter))
+                break;
+
+            int[] computerProposal = computer.computerProcessing(Utils.intToCombination(proposal), pattern);
+            System.out.println(Utils.combinationToInt(computerProposal));
+            if (compareNumber(Utils.combinationToInt(computerProposal), secretNumber, lapCounter))
+                break;
+        }
     }
 
     public void defense () {
+        System.out.println("Bienvenue sur le jeu du juste prix en mode défenseur !");
         secretNumber = askNumber();
         ComputerMoreOrLess computer = new ComputerMoreOrLess(Utils.intToCombination(secretNumber).length);
         int[] proposal = new int[0];
@@ -65,7 +83,7 @@ public class MoreOrLessCore {
      * @return the number entered by the user
      */
     private int askNumber () {
-        System.out.println("Donnez un chiffre : ");
+        System.out.println("Donnez un chiffre (" + secretNumberLength + ") : ");
         return sc.nextInt();
     }
 
