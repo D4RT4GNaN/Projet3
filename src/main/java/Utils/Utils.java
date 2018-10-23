@@ -1,5 +1,6 @@
 package Utils;
 
+import ErrorHandler.ErrorHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -103,11 +104,9 @@ public class Utils {
             properties.load(config);
             config.close();
         } catch (FileNotFoundException e) {
-            logger.error(e);
-            System.err.println("Le fichier n'existe pas !");
+            ErrorHandler.fileNotFoundError(logger, e);
         } catch (IOException e) {
-            logger.error(e);
-            System.err.println("Impossible de lire ou d'écrire dans le fichier.");
+            ErrorHandler.cantWriteFileError(logger, e);
         }
 
         return properties;
@@ -147,8 +146,7 @@ public class Utils {
             Integer.parseInt(proposal);
             return true;
         } catch (NumberFormatException e) {
-            logger.warn("Only numbers are accepted");
-            System.err.println("Caractère(s) non accepté(s) : Veuillez entrer un nombre !");
+            ErrorHandler.inputNotNumbersError(logger);
             return false;
         }
     }
@@ -164,8 +162,7 @@ public class Utils {
         if (proposal.length() == secretCodeLength)
             return true;
         else {
-            logger.warn("Input length different from that expected (" + secretCodeLength + ")");
-            System.err.println("Vous devez entrer un nombre à " + secretCodeLength + " chiffres !");
+            ErrorHandler.inputNotHaveRightLengthError(logger, secretCodeLength);
             return false;
         }
     }
