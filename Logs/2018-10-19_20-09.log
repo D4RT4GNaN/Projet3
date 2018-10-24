@@ -1,0 +1,15 @@
+[20:09:58] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in dual mode
+[20:09:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[20:09:58] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[20:09:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[20:09:58] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[20:09:58] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[20:10:06] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[20:10:06] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[20:10:06] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set his secret code to [I@2d52216b
+[20:10:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[20:10:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[20:10:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[20:10:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[20:10:15] [INFO  ] [main.java.Mastermind.Mastermind]  : Computer win in 1 move(s)
+[20:10:50] [INFO  ] [main.java.Main.Menu]  : Stopping program

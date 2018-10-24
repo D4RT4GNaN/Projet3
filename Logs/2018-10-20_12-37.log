@@ -1,0 +1,5 @@
+[12:37:55] [WARN  ] [main.java.Main.Menu]  : Bad input numbers : numbers must be in list
+[12:37:55] [WARN  ] [main.java.Utils.Utils]  : Only numbers are accepted
+[12:38:02] [WARN  ] [main.java.Main.Menu]  : Bad input numbers : numbers must be in list
+[12:38:13] [WARN  ] [main.java.Main.Menu]  : Bad input numbers : numbers must be in list
+[12:38:13] [INFO  ] [main.java.Main.Menu]  : Stopping program

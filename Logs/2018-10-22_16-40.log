@@ -1,0 +1,71 @@
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:47] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:47] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:40:47] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:40:50] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:50] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:50] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:40:52] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:52] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:40:52] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:40:54] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:54] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:54] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:40:55] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:55] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:40:55] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:40:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:40:58] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:40:58] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:41:00] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:00] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:41:00] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:41:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:05] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:05] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:41:07] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:41:07] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:41:10] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:10] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:10] [WARN  ] [main.java.Utils.Utils]  : Input length different from that expected (5)
+[16:41:12] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:12] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:12] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:41:15] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in challenger mode and developer mode
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of colours available for the secret code
+[16:41:15] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:41:18] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:41:18] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:41:18] [INFO  ] [main.java.Mastermind.Mastermind]  : Player found the secret code in 1 move(s)
+[16:41:19] [INFO  ] [main.java.Main.Menu]  : Stopping program

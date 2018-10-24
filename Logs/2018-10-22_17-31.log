@@ -1,0 +1,14 @@
+[17:31:16] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:16] [INFO  ] [main.java.Main.Menu]  : More or less game started in challenger mode and developer mode
+[17:31:16] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:16] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[17:31:16] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:16] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[17:31:46] [INFO  ] [main.java.MoreOrLess.MoreOrLess]  : Player found the secret code in 1 move(s)
+[17:31:59] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:59] [INFO  ] [main.java.Main.Menu]  : More or less game started in dual mode and developer mode
+[17:31:59] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:59] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[17:31:59] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[17:31:59] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[17:32:02] [INFO  ] [main.java.Main.Menu]  : Stopping program

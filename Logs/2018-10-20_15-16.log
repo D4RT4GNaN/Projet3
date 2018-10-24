@@ -1,0 +1,31 @@
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:05] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:05] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:05] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:08] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:08] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:08] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 11286
+[15:17:08] [INFO  ] [main.java.Mastermind.Mastermind]  : ComputerMastermind found the secret code in 13 move(s)
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:34] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in dual mode and developer mode
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:34] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:34] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:46] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:46] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:17:46] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set his secret code to [I@942a29c
+[15:17:51] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:17:51] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:18:05] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[15:18:05] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[15:18:05] [INFO  ] [main.java.Mastermind.Mastermind]  : Player win in 2 move(s)
+[15:18:10] [INFO  ] [main.java.Main.Menu]  : Stopping program

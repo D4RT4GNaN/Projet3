@@ -1,0 +1,7 @@
+[10:02:03] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[10:02:03] [INFO  ] [main.java.Main.Menu]  : More or less game started in defense mode and developer mode
+[10:02:03] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[10:02:03] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[10:02:03] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[10:02:03] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[10:04:19] [INFO  ] [main.java.Main.Menu]  : Stopping program

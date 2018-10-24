@@ -1,0 +1,49 @@
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:45:23] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:45:23] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:45:23] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:45:27] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:45:27] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:45:27] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 51497
+[16:46:07] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:07] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:15] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:15] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:15] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 51497
+[16:46:15] [INFO  ] [main.java.Mastermind.Mastermind]  : ComputerMastermind found the secret code in 15 move(s)
+[16:46:26] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:26] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:26] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:30] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:30] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:30] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 69532
+[16:46:30] [INFO  ] [main.java.Mastermind.Mastermind]  : ComputerMastermind found the secret code in 15 move(s)
+[16:46:38] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:38] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:38] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:44] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[16:46:44] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[16:46:44] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 44596
+[16:46:44] [INFO  ] [main.java.Mastermind.Mastermind]  : ComputerMastermind found the secret code in 13 move(s)
+[16:47:12] [INFO  ] [main.java.Main.Menu]  : Stopping program

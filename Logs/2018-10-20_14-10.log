@@ -1,0 +1,417 @@
+[14:10:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:10:58] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[14:10:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:10:58] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[14:10:58] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:10:58] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:10:58] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 45789
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:07] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:07] [INFO  ] [main.java.Mastermind.Mastermind]  : Computer found the secret code in 11 move(s)
+[14:11:28] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[14:11:28] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:28] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[14:11:28] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:28] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:28] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 35713
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:11:37] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:11:37] [INFO  ] [main.java.Mastermind.Mastermind]  : Computer found the secret code in 19 move(s)
+[14:12:26] [INFO  ] [main.java.Main.Menu]  : Mastermind game started in defense mode and developer mode
+[14:12:26] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:26] [INFO  ] [main.java.Utils.Utils]  : Recovered the number of max tries
+[14:12:26] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:26] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:26] [INFO  ] [main.java.Mastermind.Mastermind]  : Creating the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Mastermind.Mastermind]  : Player set the secret code to 15057
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Recovered the length of the secret code
+[14:12:31] [INFO  ] [main.java.Utils.Utils]  : Reading config file
