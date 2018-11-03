@@ -12,7 +12,8 @@ Pour cloner le code :
 3. Utilisez le lien https://github.com/D4RT4GNaN/Projet3.git puis appuyez sur clone
 
 Pour lancer le jeu :
-
-Lancer la classe main avec la flèche verte à gauche de la méthode main.
+1. En bas à droite un pop-up s'ouvre et vous propose d'ajouter maven. Cliquez sur "add maven"
+2. Dans File > Project Structure... vous avez un champ pour la sélection du SDK sélectionnez une version de SDK (1.8 minimum, 10 recommandé)
+3. Sur la gauche déroulez Projet3 > src > main > java > Main et lancer la classe "Main" avec la flèche verte à gauche de la méthode main.
 
 Bon jeu !!
