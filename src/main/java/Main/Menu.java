@@ -18,6 +18,14 @@ class Menu {
     private boolean dev;
     private Logger logger = LogManager.getLogger("main.java.Main.Menu");
 
+    public Menu(String devMode) {
+        dev = (devMode.equals("-d") || devMode.equals("--developer"));
+    }
+
+    public Menu(){
+        dev = Utils.hasDevMode();
+    }
+
     /**
      * Asks the user what game and mode they want
      */
@@ -44,7 +52,6 @@ class Menu {
             String entryUser = sc.nextLine();
             String[] paramUser = entryUser.split(" ");
             mode = paramUser[0];
-            dev = Utils.hasDevMode(paramUser);
         } while (!selectNumber(mode, "123"));
 
     }

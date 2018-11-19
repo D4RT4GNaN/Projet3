@@ -16,4 +16,9 @@ Pour lancer le jeu :
 2. Dans File > Project Structure... vous avez un champ pour la sélection du SDK sélectionnez une version de SDK (1.8 minimum, 10 recommandé)
 3. Sur la gauche déroulez Projet3 > src > main > java > Main et lancer la classe "Main" avec la flèche verte à gauche de la méthode main.
 
+Pour activer le mode développeur (affiche la réponse) :
+1. Cliquez sur "Run" dans la barre d'outil en haut
+2. Dans le menu déroulant cliquez sur "Edit Configurations..."
+3. Dans l'onglet "configuration", à la troisième ligne se trouve le champ "Program arguments" dans lequel vous pouvez rentrer "-d" ou "--developer" afin d'activer le mode développeur
+
 Bon jeu !!

@@ -169,14 +169,10 @@ public class Utils {
 
     /**
      * Allows access to developer mode
-     * @param paramUser the keyword for the developer mode
      * @return true if it's the correct keyword
      */
-    public static boolean hasDevMode(String[] paramUser) {
+    public static boolean hasDevMode() {
         Properties properties = loadConfigFile();
-        if (Boolean.parseBoolean(properties.getProperty("developer-mode")))
-            return true;
-        else
-            return paramUser.length == 2 && paramUser[1].equals("dev");
+        return Boolean.parseBoolean(properties.getProperty("developer-mode"));
     }
 }
